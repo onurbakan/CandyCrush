@@ -89,7 +89,6 @@ public class Board : MonoBehaviour
         return false;
     }
 
-
     private void DestroyMatchesAt(int column, int row)
     {
         if (allDots[column, row].GetComponent<Dot>().isMatched)
@@ -112,7 +111,30 @@ public class Board : MonoBehaviour
             }
 
         }
+        StartCoroutine(DecreaseRowCo());
     }
 
+    private IEnumerator DecreaseRowCo()
+    { // nullCount counter and Decrease as many row as nullCount
+        int nullCount = 0;
+        for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                if (allDots[i, j] == null)
+                {
+                    nullCount++;
+                }
+                else if (nullCount >0)
+                {
+                    allDots[i, j].GetComponent<Dot>().row -= nullCount;
+                    allDots[i, j] = null; // Bug fixed
+                }
+            }
+            nullCount = 0;
+
+        }
+        yield return new WaitForSeconds(.4f);
+    }
    
 }
