@@ -70,6 +70,7 @@ public class Dot : MonoBehaviour
             //Move Towards the target
             tempPosition = new Vector2(transform.position.x, targetY);
             transform.position = Vector2.Lerp(transform.position, tempPosition, .6f);
+            if (board.allDots[column, row] != this.gameObject)
             {// Bugs Fixed (two matches)
                 board.allDots[column, row] = this.gameObject;
             }
