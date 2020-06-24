@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class Board : MonoBehaviour
@@ -88,6 +89,30 @@ public class Board : MonoBehaviour
         return false;
     }
 
+
+    private void DestroyMatchesAt(int column, int row)
+    {
+        if (allDots[column, row].GetComponent<Dot>().isMatched)
+        { // Destroy the object
+            Destroy(allDots[column, row]);
+            allDots[column, row] = null;
+        }
+    }
+
+    public void DestroyMatches()
+    {// destroy all the matches on the board
+        for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                if (allDots[i, j] != null)
+                {
+                    DestroyMatchesAt(i,j);
+                }
+            }
+
+        }
+    }
 
    
 }

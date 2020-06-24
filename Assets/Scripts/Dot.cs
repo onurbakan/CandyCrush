@@ -139,14 +139,19 @@ public class Dot : MonoBehaviour
         if (otherDot != null)
         {
             if (!isMatched && !otherDot.GetComponent<Dot>().isMatched)
-            {
+            { // Match değilse kaydırılan nesnenin geri gelmesi için fonksiyon
                 otherDot.GetComponent<Dot>().row = row;
                 otherDot.GetComponent<Dot>().column = column;
                 row = previousRow;
                 column = previousColumn;
             }
+            else
+            { // Match ise objeleri yoket
+                board.DestroyMatches();
+            }
             otherDot = null;
         }
+        
     }
 
     void FindMatches()
