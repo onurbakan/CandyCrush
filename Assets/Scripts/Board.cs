@@ -12,6 +12,7 @@ public enum GameState
 
 public class Board : MonoBehaviour
 {
+    
     public GameState currentState = GameState.move;
     public int width;
     public int height;
@@ -20,11 +21,13 @@ public class Board : MonoBehaviour
     public GameObject[] dots;
     private BackgroundTile[,] allTiles;
     public GameObject[,] allDots;
+    private FindMatches findMatches;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        findMatches = FindObjectOfType<FindMatches>();
         // Arraylerin birimlerini belirterek oluşturduk.
         allTiles = new BackgroundTile[width, height];
         allDots = new GameObject[width, height];
@@ -103,6 +106,7 @@ public class Board : MonoBehaviour
     {
         if (allDots[column, row].GetComponent<Dot>().isMatched)
         { // Destroy the object
+            findMatches.currentMatches.Remove(allDots[column, row]);//List te null objeler kalmaması için
             Destroy(allDots[column, row]);
             allDots[column, row] = null;
         }
@@ -142,7 +146,6 @@ public class Board : MonoBehaviour
                 }
             }
             nullCount = 0;
-
         }
         yield return new WaitForSeconds(.4f);
         StartCoroutine(FillBoardCo());
