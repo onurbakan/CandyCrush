@@ -8,6 +8,7 @@ public class Board : MonoBehaviour
 {
     public int width;
     public int height;
+    public int offSet; // Nesnelerin yukarıdan kayarak inmesi için tanımlandı.
     public GameObject tilePrefab;
     public GameObject[] dots;
     private BackgroundTile[,] allTiles;
@@ -30,7 +31,7 @@ public class Board : MonoBehaviour
             for (int j = 0; j < height; j++)
             {
                 //Her bir kareye erişebilmek için i,j şeklinde herbir kareye isim verdik. 
-                Vector2 tempPosition = new Vector2(i, j);
+                Vector2 tempPosition = new Vector2(i, j + offSet);//offset ne kadar yukardan ineceğini ayarlayan parametre
                 GameObject backgroundTile =  Instantiate(tilePrefab,tempPosition ,Quaternion.identity) as GameObject;
                 backgroundTile.transform.parent = this.transform;
                 backgroundTile.name = "( " + i + " , " + j + " )";
@@ -46,6 +47,8 @@ public class Board : MonoBehaviour
                 maxIterations = 0;
 
                 GameObject dot = Instantiate(dots[dotToUse], tempPosition, Quaternion.identity);
+                dot.GetComponent<Dot>().row = j;
+                dot.GetComponent<Dot>().column = i;
                 dot.transform.parent = this.transform;
                 dot.name = "( " + i + " , " + j + " )";
                 allDots[i, j] = dot;
@@ -146,10 +149,12 @@ public class Board : MonoBehaviour
             {
                 if (allDots[i, j] == null)
                 {
-                    Vector2 tempPosition = new Vector2(i, j);
+                    Vector2 tempPosition = new Vector2(i, j + offSet);
                     int dotToUse = Random.Range(0, dots.Length);
                     GameObject piece = Instantiate(dots[dotToUse], tempPosition, Quaternion.identity);
                     allDots[i, j] = piece;
+                    piece.GetComponent<Dot>().row = j;
+                    piece.GetComponent<Dot>().column = i;
                 }
             }
         }
