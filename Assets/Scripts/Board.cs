@@ -4,8 +4,15 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security.Cryptography;
 using UnityEngine;
 
+public enum GameState
+{// Karışıklık, bug olmaması için nesnelerin hareketi durumunda wait, bittiğinde move statelerini ayarlama
+    wait,
+    move
+}
+
 public class Board : MonoBehaviour
 {
+    public GameState currentState = GameState.move;
     public int width;
     public int height;
     public int offSet; // Nesnelerin yukarıdan kayarak inmesi için tanımlandı.
@@ -188,6 +195,9 @@ public class Board : MonoBehaviour
             yield return new WaitForSeconds(.5f);
             DestroyMatches();
         }
+        yield return new WaitForSeconds(.5f);
+        currentState = GameState.move;
+
     }
    
 }
