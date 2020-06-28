@@ -19,6 +19,7 @@ public class Board : MonoBehaviour
     public int offSet; // Nesnelerin yukarıdan kayarak inmesi için tanımlandı.
     public GameObject tilePrefab;
     public GameObject[] dots;
+    public GameObject destroyEffect;
     private BackgroundTile[,] allTiles;
     public GameObject[,] allDots;
     private FindMatches findMatches;
@@ -107,6 +108,11 @@ public class Board : MonoBehaviour
         if (allDots[column, row].GetComponent<Dot>().isMatched)
         { // Destroy the object
             findMatches.currentMatches.Remove(allDots[column, row]);//List te null objeler kalmaması için
+
+            // Destroy edilen objenin parlaması için, destroyEffect prefab kodu.
+            GameObject particle = Instantiate(destroyEffect, allDots[column, row].transform.position, Quaternion.identity);
+            Destroy(particle, .5f); // Kalıntı bırakmaması hafızada yer işgal etmemesi için silindi.
+            
             Destroy(allDots[column, row]);
             allDots[column, row] = null;
         }
