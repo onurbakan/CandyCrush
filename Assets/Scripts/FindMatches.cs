@@ -32,7 +32,7 @@ public class FindMatches : MonoBehaviour
                 GameObject currentDot = board.allDots[i, j];
                 if (currentDot != null)
                 {
-                    if (i > 0 && i < board.width -1)
+                    if (i > 0 && i < board.width - 1)
                     { // Sağ ve sol objeler match oluyor mu kontrolü, oluyorsa isMatched leri true
                         GameObject leftDot = board.allDots[i - 1, j];
                         GameObject rightDot = board.allDots[i + 1, j];
@@ -42,10 +42,23 @@ public class FindMatches : MonoBehaviour
                             {
 
                                 if (currentDot.GetComponent<Dot>().isRowBomb
-                                    || leftDot.GetComponent<Dot>().isRowBomb 
-                                    || rightDot.GetComponent<Dot>().isRowBomb )
-                                {
+                                    || leftDot.GetComponent<Dot>().isRowBomb
+                                    || rightDot.GetComponent<Dot>().isRowBomb)
+                                {// Row arrow bomb tetiklemek için.
                                     currentMatches.Union(GetRowPieces(j)); // Union kodunu System.Linq sayesinde yazdık
+                                }
+
+                                if (currentDot.GetComponent<Dot>().isColumnBomb)
+                                {// Column bomb'ları row da match olursa patlaması için.
+                                    currentMatches.Union(GetColumnPieces(i));
+                                }
+                                if (leftDot.GetComponent<Dot>().isColumnBomb)
+                                {
+                                    currentMatches.Union(GetColumnPieces(i - 1));
+                                }
+                                if (rightDot.GetComponent<Dot>().isColumnBomb)
+                                {
+                                    currentMatches.Union(GetColumnPieces(i + 1));
                                 }
 
 
@@ -78,6 +91,27 @@ public class FindMatches : MonoBehaviour
                         {
                             if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag)
                             {
+
+                                if (currentDot.GetComponent<Dot>().isColumnBomb
+                                    || upDot.GetComponent<Dot>().isColumnBomb
+                                    || downDot.GetComponent<Dot>().isColumnBomb)
+                                {// Column arrow bomb tetiklemek için.
+                                    currentMatches.Union(GetColumnPieces(i)); // Union kodunu System.Linq sayesinde yazdık
+                                }
+
+                                if (currentDot.GetComponent<Dot>().isRowBomb)
+                                {// Row bomb'ları column da match olursa patlaması için.
+                                    currentMatches.Union(GetRowPieces(j));
+                                }
+                                if (upDot.GetComponent<Dot>().isRowBomb)
+                                {
+                                    currentMatches.Union(GetRowPieces(j + 1));
+                                }
+                                if (downDot.GetComponent<Dot>().isRowBomb)
+                                {
+                                    currentMatches.Union(GetRowPieces(j - 1));
+                                }
+
                                 if (!currentMatches.Contains(upDot))
                                 {// List e eklemek için
                                     currentMatches.Add(upDot);
