@@ -192,8 +192,27 @@ public class FindMatches : MonoBehaviour
             }
             //Is the other piece matched?
             else if (board.currentDot.otherDot != null)
-            {
+            { // Dörtlü match'lerde farklı rengi kaydırarak match yaptığımızda bomb oluşması için helper code.
+                Dot otherDot = board.currentDot.otherDot.GetComponent<Dot>();
+                //Is the other Dot matched?
+                if (otherDot.isMatched)
+                {
+                    //Make it unmatched
+                    otherDot.isMatched = false;
+                    //Decide what kind of bomb to make
+                    int typeOfBomb = Random.Range(0, 100);
+                    if (typeOfBomb < 50)
+                    {
+                        //Make a row bomb
+                        otherDot.MakeRowBomb();
+                    }
+                    else if (typeOfBomb >= 50)
+                    {
+                        //Make a column bomb
+                        otherDot.MakeColumnBomb();
+                    }
 
+                }
             }
         }
     }
