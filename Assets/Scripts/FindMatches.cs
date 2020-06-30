@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.U2D.Common;
 using UnityEngine;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 
 public class FindMatches : MonoBehaviour
 {
@@ -164,6 +165,37 @@ public class FindMatches : MonoBehaviour
             }
         }
         return dots;
+    }
+
+    public void CheckBombs()
+    { // Did the player move something?
+        if (board.currentDot != null)
+        {
+            //Is the piece they moved matched?
+            if (board.currentDot.isMatched)
+            {
+                //make it unmatched
+                board.currentDot.isMatched = false;
+
+                //Decide what kind of bomb to make
+                int typeOfBomb = Random.Range(0, 100);
+                if (typeOfBomb < 50)
+                {
+                    //Make a row bomb
+                    board.currentDot.MakeRowBomb();
+                }
+                else if (typeOfBomb >= 50)
+                {
+                    //Make a column bomb
+                    board.currentDot.MakeColumnBomb(); 
+                }
+            }
+            //Is the other piece matched?
+            else if (board.currentDot.otherDot != null)
+            {
+
+            }
+        }
     }
 
 }

@@ -22,6 +22,7 @@ public class Board : MonoBehaviour
     public GameObject destroyEffect;
     private BackgroundTile[,] allTiles;
     public GameObject[,] allDots;
+    public Dot currentDot;
     private FindMatches findMatches;
 
 
@@ -106,7 +107,14 @@ public class Board : MonoBehaviour
     private void DestroyMatchesAt(int column, int row)
     {
         if (allDots[column, row].GetComponent<Dot>().isMatched)
-        { // Destroy the object
+        {
+            //How many elements are in the matched pieces list from findmatches?
+            if (findMatches.currentMatches.Count == 4 || findMatches.currentMatches.Count == 7)
+            {
+                findMatches.CheckBombs();
+            }
+
+            // Destroy the object
             findMatches.currentMatches.Remove(allDots[column, row]);//List te null objeler kalmaması için
 
             // Destroy edilen objenin parlaması için, destroyEffect prefab kodu.
@@ -204,6 +212,7 @@ public class Board : MonoBehaviour
             yield return new WaitForSeconds(.5f);
             DestroyMatches();
         }
+        findMatches.currentMatches.Clear();
         yield return new WaitForSeconds(.5f);
         currentState = GameState.move;
 
