@@ -50,17 +50,16 @@ public class Dot : MonoBehaviour
         //previousColumn = column;
     }
 
-
-    //This is for testing and Debug only.
-    private void OnMouseOver()
-    {
-        if (Input.GetMouseButtonDown(1))
+    /* //This is for testing and Debug only.    
+        private void OnMouseOver()
         {
-            isRowBomb = true;
-            GameObject arrow = Instantiate(rowArrow, transform.position, Quaternion.identity);
-            arrow.transform.parent = this.transform;
-        }
-    }
+            if (Input.GetMouseButtonDown(1))
+            {
+                isRowBomb = true;
+                GameObject arrow = Instantiate(rowArrow, transform.position, Quaternion.identity);
+                arrow.transform.parent = this.transform;
+            }
+        }*/
 
     // Update is called once per frame
     void Update()
