@@ -264,6 +264,7 @@ MonoBehaviour:
   - {fileID: 686902420739240959, guid: 6178e090fd97e0d48944281b8bb65288, type: 3}
   destroyEffect: {fileID: 6797851920598647572, guid: d52cbe561374eb94e83cc0ec40cdc56b,
     type: 3}
+  currentDot: {fileID: 0}
 --- !u!1 &1888744133
 GameObject:
   m_ObjectHideFlags: 0
