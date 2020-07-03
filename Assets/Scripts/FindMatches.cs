@@ -22,6 +22,62 @@ public class FindMatches : MonoBehaviour
         StartCoroutine(FindAllMatchesCo());
     }
 
+    private List<GameObject> IsRowBomb(Dot dot1, Dot dot2, Dot dot3)
+    {
+        List<GameObject> currentDots = new List<GameObject>();
+
+        if (dot1.isRowBomb)//currentDot
+        {// Row bomb'ları column da match olursa patlaması için.
+            currentMatches.Union(GetRowPieces(dot1.row));
+        }
+        if (dot2.isRowBomb)//upDot
+        {
+            currentMatches.Union(GetRowPieces(dot2.row));
+        }
+        if (dot3.isRowBomb)//downDot
+        {
+            currentMatches.Union(GetRowPieces(dot3.row));
+        }
+        return currentDots;
+    }
+
+    private List<GameObject> IsColumnBomb(Dot dot1, Dot dot2, Dot dot3)
+    {
+        List<GameObject> currentDots = new List<GameObject>();
+
+        if (dot1.isColumnBomb)//currentDot
+        {// Row bomb'ları column da match olursa patlaması için.
+            currentMatches.Union(GetColumnPieces(dot1.column));
+        }
+        if (dot2.isColumnBomb)//upDot
+        {
+            currentMatches.Union(GetColumnPieces(dot2.column));
+        }
+        if (dot3.isColumnBomb)//downDot
+        {
+            currentMatches.Union(GetColumnPieces(dot3.column));
+        }
+        return currentDots;
+    }
+
+    private void AddToListAndMatch(GameObject dot)
+    {
+        if (!currentMatches.Contains(dot))
+        { // List e eklemek için
+            currentMatches.Add(dot);
+        }
+        dot.GetComponent<Dot>().isMatched = true;
+    }
+
+    private void GetNearbyPieces(GameObject dot1, GameObject dot2, GameObject dot3)
+    {
+        AddToListAndMatch(dot1);
+        AddToListAndMatch(dot2);
+        AddToListAndMatch(dot3);
+
+    }
+
+
     private IEnumerator FindAllMatchesCo()
     {
         yield return new WaitForSeconds(.2f);
@@ -30,25 +86,32 @@ public class FindMatches : MonoBehaviour
             for (int j = 0; j < board.height; j++)
             {
                 GameObject currentDot = board.allDots[i, j];
+                Dot currentDotDot = currentDot.GetComponent<Dot>();
                 if (currentDot != null)
                 {
                     if (i > 0 && i < board.width - 1)
                     { // Sağ ve sol objeler match oluyor mu kontrolü, oluyorsa isMatched leri true
                         GameObject leftDot = board.allDots[i - 1, j];
+                        Dot leftDotDot = leftDot.GetComponent<Dot>();
                         GameObject rightDot = board.allDots[i + 1, j];
+                        Dot rightDotDot = rightDot.GetComponent<Dot>();
                         if (leftDot != null && rightDot != null)
                         {
                             if (leftDot.tag == currentDot.tag && rightDot.tag == currentDot.tag)
                             {
 
-                                if (currentDot.GetComponent<Dot>().isRowBomb
+                                currentMatches.Union(IsRowBomb(leftDotDot, currentDotDot, rightDotDot));
+
+                                /*if (currentDot.GetComponent<Dot>().isRowBomb
                                     || leftDot.GetComponent<Dot>().isRowBomb
                                     || rightDot.GetComponent<Dot>().isRowBomb)
                                 {// Row arrow bomb tetiklemek için.
                                     currentMatches.Union(GetRowPieces(j)); // Union kodunu System.Linq sayesinde yazdık
-                                }
+                                }*/
 
-                                if (currentDot.GetComponent<Dot>().isColumnBomb)
+                                currentMatches.Union(IsColumnBomb(leftDotDot, currentDotDot, rightDotDot));
+
+                                /*if (currentDot.GetComponent<Dot>().isColumnBomb)
                                 {// Column bomb'ları row da match olursa patlaması için.
                                     currentMatches.Union(GetColumnPieces(i));
                                 }
@@ -59,10 +122,12 @@ public class FindMatches : MonoBehaviour
                                 if (rightDot.GetComponent<Dot>().isColumnBomb)
                                 {
                                     currentMatches.Union(GetColumnPieces(i + 1));
-                                }
+                                }*/
 
 
-                                if (!currentMatches.Contains(leftDot))
+                                GetNearbyPieces(leftDot, currentDot, rightDot);
+
+                                /*if (!currentMatches.Contains(leftDot))
                                 { // List e eklemek için
                                     currentMatches.Add(leftDot);
                                 }
@@ -78,7 +143,7 @@ public class FindMatches : MonoBehaviour
                                 {
                                     currentMatches.Add(currentDot);
                                 }
-                                currentDot.GetComponent<Dot>().isMatched = true;
+                                currentDot.GetComponent<Dot>().isMatched = true;*/
                             }
                         }
                     }
@@ -86,20 +151,27 @@ public class FindMatches : MonoBehaviour
                     if (j > 0 && j < board.height - 1)
                     { // Üst ve alt objeler match oluyor mu kontrolü, oluyorsa isMatched leri true
                         GameObject upDot = board.allDots[i, j + 1];
+                        Dot upDotDot = upDot.GetComponent<Dot>();
                         GameObject downDot = board.allDots[i, j - 1];
+                        Dot downDotDot = downDot.GetComponent<Dot>();
                         if (upDot != null && downDot != null)
                         {
                             if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag)
                             {
 
-                                if (currentDot.GetComponent<Dot>().isColumnBomb
+                                currentMatches.Union(IsColumnBomb(upDotDot, currentDotDot, downDotDot));
+
+                                /*if (currentDot.GetComponent<Dot>().isColumnBomb
                                     || upDot.GetComponent<Dot>().isColumnBomb
                                     || downDot.GetComponent<Dot>().isColumnBomb)
                                 {// Column arrow bomb tetiklemek için.
                                     currentMatches.Union(GetColumnPieces(i)); // Union kodunu System.Linq sayesinde yazdık
-                                }
+                                }*/
 
-                                if (currentDot.GetComponent<Dot>().isRowBomb)
+                                currentMatches.Union(IsRowBomb(upDotDot, currentDotDot, downDotDot));
+
+
+                                /*if (currentDot.GetComponent<Dot>().isRowBomb)
                                 {// Row bomb'ları column da match olursa patlaması için.
                                     currentMatches.Union(GetRowPieces(j));
                                 }
@@ -110,9 +182,11 @@ public class FindMatches : MonoBehaviour
                                 if (downDot.GetComponent<Dot>().isRowBomb)
                                 {
                                     currentMatches.Union(GetRowPieces(j - 1));
-                                }
+                                }*/
 
-                                if (!currentMatches.Contains(upDot))
+                                GetNearbyPieces(upDot, currentDot, downDot);
+
+                                /*if (!currentMatches.Contains(upDot))
                                 {// List e eklemek için
                                     currentMatches.Add(upDot);
                                 }
@@ -128,7 +202,7 @@ public class FindMatches : MonoBehaviour
                                 {
                                     currentMatches.Add(currentDot);
                                 }
-                                currentDot.GetComponent<Dot>().isMatched = true;
+                                currentDot.GetComponent<Dot>().isMatched = true;*/
                             }
                         }
                     }

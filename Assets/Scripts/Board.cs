@@ -114,8 +114,7 @@ public class Board : MonoBehaviour
                 findMatches.CheckBombs();
             }
 
-            // Destroy the object
-            findMatches.currentMatches.Remove(allDots[column, row]);//List te null objeler kalmaması için
+
 
             // Destroy edilen objenin parlaması için, destroyEffect prefab kodu.
             GameObject particle = Instantiate(destroyEffect, allDots[column, row].transform.position, Quaternion.identity);
@@ -139,6 +138,7 @@ public class Board : MonoBehaviour
             }
 
         }
+        findMatches.currentMatches.Clear();//Destroy the object, List te null objeler kalmaması için
         StartCoroutine(DecreaseRowCo());
     }
 
