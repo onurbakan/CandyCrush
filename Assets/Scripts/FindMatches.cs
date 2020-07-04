@@ -77,7 +77,6 @@ public class FindMatches : MonoBehaviour
 
     }
 
-
     private IEnumerator FindAllMatchesCo()
     {
         yield return new WaitForSeconds(.2f);
@@ -86,64 +85,70 @@ public class FindMatches : MonoBehaviour
             for (int j = 0; j < board.height; j++)
             {
                 GameObject currentDot = board.allDots[i, j];
-                Dot currentDotDot = currentDot.GetComponent<Dot>();
+
                 if (currentDot != null)
                 {
+                    Dot currentDotDot = currentDot.GetComponent<Dot>();
                     if (i > 0 && i < board.width - 1)
                     { // Sağ ve sol objeler match oluyor mu kontrolü, oluyorsa isMatched leri true
                         GameObject leftDot = board.allDots[i - 1, j];
-                        Dot leftDotDot = leftDot.GetComponent<Dot>();
+
                         GameObject rightDot = board.allDots[i + 1, j];
-                        Dot rightDotDot = rightDot.GetComponent<Dot>();
+
                         if (leftDot != null && rightDot != null)
-                        {
-                            if (leftDot.tag == currentDot.tag && rightDot.tag == currentDot.tag)
+                        {//shouldn't be null
+                            Dot rightDotDot = rightDot.GetComponent<Dot>();
+                            Dot leftDotDot = leftDot.GetComponent<Dot>();
+                            if (leftDot != null && rightDot != null)
                             {
-
-                                currentMatches.Union(IsRowBomb(leftDotDot, currentDotDot, rightDotDot));
-
-                                /*if (currentDot.GetComponent<Dot>().isRowBomb
-                                    || leftDot.GetComponent<Dot>().isRowBomb
-                                    || rightDot.GetComponent<Dot>().isRowBomb)
-                                {// Row arrow bomb tetiklemek için.
-                                    currentMatches.Union(GetRowPieces(j)); // Union kodunu System.Linq sayesinde yazdık
-                                }*/
-
-                                currentMatches.Union(IsColumnBomb(leftDotDot, currentDotDot, rightDotDot));
-
-                                /*if (currentDot.GetComponent<Dot>().isColumnBomb)
-                                {// Column bomb'ları row da match olursa patlaması için.
-                                    currentMatches.Union(GetColumnPieces(i));
-                                }
-                                if (leftDot.GetComponent<Dot>().isColumnBomb)
+                                if (leftDot.tag == currentDot.tag && rightDot.tag == currentDot.tag)
                                 {
-                                    currentMatches.Union(GetColumnPieces(i - 1));
+
+                                    currentMatches.Union(IsRowBomb(leftDotDot, currentDotDot, rightDotDot));
+
+                                    /*if (currentDot.GetComponent<Dot>().isRowBomb
+                                        || leftDot.GetComponent<Dot>().isRowBomb
+                                        || rightDot.GetComponent<Dot>().isRowBomb)
+                                    {// Row arrow bomb tetiklemek için.
+                                        currentMatches.Union(GetRowPieces(j)); // Union kodunu System.Linq sayesinde yazdık
+                                    }*/
+
+                                    currentMatches.Union(IsColumnBomb(leftDotDot, currentDotDot, rightDotDot));
+
+                                    /*if (currentDot.GetComponent<Dot>().isColumnBomb)
+                                    {// Column bomb'ları row da match olursa patlaması için.
+                                        currentMatches.Union(GetColumnPieces(i));
+                                    }
+                                    if (leftDot.GetComponent<Dot>().isColumnBomb)
+                                    {
+                                        currentMatches.Union(GetColumnPieces(i - 1));
+                                    }
+                                    if (rightDot.GetComponent<Dot>().isColumnBomb)
+                                    {
+                                        currentMatches.Union(GetColumnPieces(i + 1));
+                                    }*/
+
+
+                                    GetNearbyPieces(leftDot, currentDot, rightDot);
+
+                                    /*if (!currentMatches.Contains(leftDot))
+                                    { // List e eklemek için
+                                        currentMatches.Add(leftDot);
+                                    }
+                                    leftDot.GetComponent<Dot>().isMatched = true;
+
+                                    if (!currentMatches.Contains(rightDot))
+                                    {
+                                        currentMatches.Add(rightDot);
+                                    }
+                                    rightDot.GetComponent<Dot>().isMatched = true;
+
+                                    if (!currentMatches.Contains(currentDot))
+                                    {
+                                        currentMatches.Add(currentDot);
+                                    }
+                                    currentDot.GetComponent<Dot>().isMatched = true;*/
                                 }
-                                if (rightDot.GetComponent<Dot>().isColumnBomb)
-                                {
-                                    currentMatches.Union(GetColumnPieces(i + 1));
-                                }*/
-
-
-                                GetNearbyPieces(leftDot, currentDot, rightDot);
-
-                                /*if (!currentMatches.Contains(leftDot))
-                                { // List e eklemek için
-                                    currentMatches.Add(leftDot);
-                                }
-                                leftDot.GetComponent<Dot>().isMatched = true;
-
-                                if (!currentMatches.Contains(rightDot))
-                                {
-                                    currentMatches.Add(rightDot);
-                                }
-                                rightDot.GetComponent<Dot>().isMatched = true;
-
-                                if (!currentMatches.Contains(currentDot))
-                                {
-                                    currentMatches.Add(currentDot);
-                                }
-                                currentDot.GetComponent<Dot>().isMatched = true;*/
                             }
                         }
                     }
@@ -151,58 +156,65 @@ public class FindMatches : MonoBehaviour
                     if (j > 0 && j < board.height - 1)
                     { // Üst ve alt objeler match oluyor mu kontrolü, oluyorsa isMatched leri true
                         GameObject upDot = board.allDots[i, j + 1];
-                        Dot upDotDot = upDot.GetComponent<Dot>();
+
                         GameObject downDot = board.allDots[i, j - 1];
-                        Dot downDotDot = downDot.GetComponent<Dot>();
+
                         if (upDot != null && downDot != null)
                         {
-                            if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag)
-                            {
-
-                                currentMatches.Union(IsColumnBomb(upDotDot, currentDotDot, downDotDot));
-
-                                /*if (currentDot.GetComponent<Dot>().isColumnBomb
-                                    || upDot.GetComponent<Dot>().isColumnBomb
-                                    || downDot.GetComponent<Dot>().isColumnBomb)
-                                {// Column arrow bomb tetiklemek için.
-                                    currentMatches.Union(GetColumnPieces(i)); // Union kodunu System.Linq sayesinde yazdık
-                                }*/
-
-                                currentMatches.Union(IsRowBomb(upDotDot, currentDotDot, downDotDot));
 
 
-                                /*if (currentDot.GetComponent<Dot>().isRowBomb)
-                                {// Row bomb'ları column da match olursa patlaması için.
-                                    currentMatches.Union(GetRowPieces(j));
-                                }
-                                if (upDot.GetComponent<Dot>().isRowBomb)
+                            Dot downDotDot = downDot.GetComponent<Dot>();
+                            Dot upDotDot = upDot.GetComponent<Dot>();
+                            if (upDot != null && downDot != null)
+                            {//shouldn't be null
+                                if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag)
                                 {
-                                    currentMatches.Union(GetRowPieces(j + 1));
-                                }
-                                if (downDot.GetComponent<Dot>().isRowBomb)
-                                {
-                                    currentMatches.Union(GetRowPieces(j - 1));
-                                }*/
 
-                                GetNearbyPieces(upDot, currentDot, downDot);
+                                    currentMatches.Union(IsColumnBomb(upDotDot, currentDotDot, downDotDot));
 
-                                /*if (!currentMatches.Contains(upDot))
-                                {// List e eklemek için
-                                    currentMatches.Add(upDot);
-                                }
-                                upDot.GetComponent<Dot>().isMatched = true;
+                                    /*if (currentDot.GetComponent<Dot>().isColumnBomb
+                                        || upDot.GetComponent<Dot>().isColumnBomb
+                                        || downDot.GetComponent<Dot>().isColumnBomb)
+                                    {// Column arrow bomb tetiklemek için.
+                                        currentMatches.Union(GetColumnPieces(i)); // Union kodunu System.Linq sayesinde yazdık
+                                    }*/
 
-                                if (!currentMatches.Contains(downDot))
-                                {
-                                    currentMatches.Add(downDot);
-                                }
-                                downDot.GetComponent<Dot>().isMatched = true;
+                                    currentMatches.Union(IsRowBomb(upDotDot, currentDotDot, downDotDot));
 
-                                if (!currentMatches.Contains(currentDot))
-                                {
-                                    currentMatches.Add(currentDot);
+
+                                    /*if (currentDot.GetComponent<Dot>().isRowBomb)
+                                    {// Row bomb'ları column da match olursa patlaması için.
+                                        currentMatches.Union(GetRowPieces(j));
+                                    }
+                                    if (upDot.GetComponent<Dot>().isRowBomb)
+                                    {
+                                        currentMatches.Union(GetRowPieces(j + 1));
+                                    }
+                                    if (downDot.GetComponent<Dot>().isRowBomb)
+                                    {
+                                        currentMatches.Union(GetRowPieces(j - 1));
+                                    }*/
+
+                                    GetNearbyPieces(upDot, currentDot, downDot);
+
+                                    /*if (!currentMatches.Contains(upDot))
+                                    {// List e eklemek için
+                                        currentMatches.Add(upDot);
+                                    }
+                                    upDot.GetComponent<Dot>().isMatched = true;
+
+                                    if (!currentMatches.Contains(downDot))
+                                    {
+                                        currentMatches.Add(downDot);
+                                    }
+                                    downDot.GetComponent<Dot>().isMatched = true;
+
+                                    if (!currentMatches.Contains(currentDot))
+                                    {
+                                        currentMatches.Add(currentDot);
+                                    }
+                                    currentDot.GetComponent<Dot>().isMatched = true;*/
                                 }
-                                currentDot.GetComponent<Dot>().isMatched = true;*/
                             }
                         }
                     }
