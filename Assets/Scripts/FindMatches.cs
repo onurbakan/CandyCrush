@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
+using System.Net.NetworkInformation;
 
 public class FindMatches : MonoBehaviour
 {
@@ -20,6 +21,25 @@ public class FindMatches : MonoBehaviour
     public void FindAllMatches()
     {
         StartCoroutine(FindAllMatchesCo());
+    }
+
+    private List<GameObject> IsAdjacentBomb(Dot dot1, Dot dot2, Dot dot3)
+    {
+        List<GameObject> currentDots = new List<GameObject>();
+
+        if (dot1.isAdjacentBomb)
+        {// Row bomb'ları column da match olursa patlaması için.
+            currentMatches.Union(GetAdjacentPieces(dot1.column, dot1.row));
+        }
+        if (dot2.isAdjacentBomb)
+        {
+            currentMatches.Union(GetAdjacentPieces(dot2.column, dot2.row));
+        }
+        if (dot3.isAdjacentBomb)
+        {
+            currentMatches.Union(GetAdjacentPieces(dot3.column, dot3.row));
+        }
+        return currentDots;
     }
 
     private List<GameObject> IsRowBomb(Dot dot1, Dot dot2, Dot dot3)
@@ -129,6 +149,9 @@ public class FindMatches : MonoBehaviour
                                     }*/
 
 
+                                    currentMatches.Union(IsAdjacentBomb(leftDotDot, currentDotDot, rightDotDot));
+
+
                                     GetNearbyPieces(leftDot, currentDot, rightDot);
 
                                     /*if (!currentMatches.Contains(leftDot))
@@ -148,6 +171,8 @@ public class FindMatches : MonoBehaviour
                                         currentMatches.Add(currentDot);
                                     }
                                     currentDot.GetComponent<Dot>().isMatched = true;*/
+
+                                    
                                 }
                             }
                         }
@@ -195,6 +220,10 @@ public class FindMatches : MonoBehaviour
                                         currentMatches.Union(GetRowPieces(j - 1));
                                     }*/
 
+
+                                    currentMatches.Union(IsAdjacentBomb(upDotDot, currentDotDot, downDotDot));
+
+
                                     GetNearbyPieces(upDot, currentDot, downDot);
 
                                     /*if (!currentMatches.Contains(upDot))
@@ -241,6 +270,24 @@ public class FindMatches : MonoBehaviour
                 }
             }
         }
+    }
+
+    List<GameObject> GetAdjacentPieces(int column, int row)
+    {
+        List<GameObject> dots = new List<GameObject>();
+        for (int i = column - 1; i <= column + 1; i++)
+        { 
+            for (int j = row - 1; j <= row + 1; j++)
+            { // Döngüye referans aldığımız column ve rowdan bir eksik başladık ve 3x3 birimlik bir destroy birimi oluşturduk.
+                //Check if the piece is inside the board?
+                if (i >= 0 && i < board.width && j >= 0 && j < board.height)
+                {
+                    dots.Add(board.allDots[i, j]);
+                    board.allDots[i, j].GetComponent<Dot>().isMatched = true;
+                }
+            }
+        }
+        return dots;
     }
 
     List<GameObject> GetColumnPieces(int column)
