@@ -12,7 +12,7 @@ public enum GameState
 
 public class Board : MonoBehaviour
 {
-    
+
     public GameState currentState = GameState.move;
     public int width;
     public int height;
@@ -44,17 +44,17 @@ public class Board : MonoBehaviour
             {
                 //Her bir kareye erişebilmek için i,j şeklinde herbir kareye isim verdik. 
                 Vector2 tempPosition = new Vector2(i, j + offSet);//offset ne kadar yukardan ineceğini ayarlayan parametre
-                GameObject backgroundTile =  Instantiate(tilePrefab,tempPosition ,Quaternion.identity) as GameObject;
+                GameObject backgroundTile = Instantiate(tilePrefab, tempPosition, Quaternion.identity) as GameObject;
                 backgroundTile.transform.parent = this.transform;
                 backgroundTile.name = "( " + i + " , " + j + " )";
                 // Hem backgroundTile'a hem dot'lara i,j şeklinde isim verdik.
                 int dotToUse = Random.Range(0, dots.Length);
 
                 int maxIterations = 0;
-                while (MatchesAt(i , j, dots[dotToUse]) && maxIterations < 100)
+                while (MatchesAt(i, j, dots[dotToUse]) && maxIterations < 100)
                 {// 100 den fazla döngüye girmemesi için maxIterations verildi. MatchesAt kodu için yazıldı.                 
                     dotToUse = Random.Range(0, dots.Length);
-                    maxIterations++;                    
+                    maxIterations++;
                 }
                 maxIterations = 0;
 
@@ -81,11 +81,11 @@ public class Board : MonoBehaviour
                 return true;
             }
         }
-        else if (column <= 1 || row <= 1 )
-        { 
+        else if (column <= 1 || row <= 1)
+        {
             if (row > 1)
             {// column <= 1  ve row > 1 ise buraya girer ve row a bakar sadece
-                if (allDots[column, row -1].tag == piece.tag && allDots[column, row - 2].tag == piece.tag)
+                if (allDots[column, row - 1].tag == piece.tag && allDots[column, row - 2].tag == piece.tag)
                 {
                     return true;
                 }
@@ -104,14 +104,108 @@ public class Board : MonoBehaviour
         return false;
     }
 
+    private bool ColumnOrRow()
+    {
+        int numberHorizontal = 0;
+        int numberVertical = 0;
+        Dot firstPiece = findMatches.currentMatches[0].GetComponent<Dot>();
+        if (firstPiece != null)
+        {
+            foreach (GameObject currentPiece in findMatches.currentMatches)
+            {
+                Dot dot = currentPiece.GetComponent<Dot>();
+                if (dot.row == firstPiece.row)
+                {
+                    numberHorizontal++;
+                }
+                if (dot.column == firstPiece.column)
+                {
+                    numberVertical++;
+                }
+            }
+        }
+        return (numberVertical == 5 || numberHorizontal == 5);
+    }
+
+    private void CheckToMakeBombs()
+    {
+        if (findMatches.currentMatches.Count == 4 || findMatches.currentMatches.Count == 7)
+        { //Row - Column Bomb
+            findMatches.CheckBombs();
+        }
+        if (findMatches.currentMatches.Count == 5 || findMatches.currentMatches.Count == 8)
+        {
+            if (ColumnOrRow())
+            {//Make a color bomb
+                //is the current dot matched?
+                if (currentDot != null)
+                {
+                    if (currentDot.isMatched)
+                    {
+                        if (!currentDot.isColorBomb)
+                        {
+                            currentDot.isMatched = false;
+                            currentDot.MakeColorBomb();
+                        }
+                    }
+                    else
+                    {
+                        if (currentDot.otherDot != null)
+                        {
+                            Dot otherDot = currentDot.otherDot.GetComponent<Dot>();
+                            if (otherDot.isMatched)
+                            {
+                                if (!otherDot.isColorBomb)
+                                {
+                                    otherDot.isMatched = false;
+                                    otherDot.MakeColorBomb();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {//Make a Adjacent bomb
+             //is the current dot matched?
+                if (currentDot != null)
+                {
+                    if (currentDot.isMatched)
+                    {
+                        if (!currentDot.isAdjacentBomb)
+                        {
+                            currentDot.isMatched = false;
+                            currentDot.MakeAdjacentBomb();
+                        }
+                    }
+                    else
+                    {
+                        if (currentDot.otherDot != null)
+                        {
+                            Dot otherDot = currentDot.otherDot.GetComponent<Dot>();
+                            if (otherDot.isMatched)
+                            {
+                                if (!otherDot.isAdjacentBomb)
+                                {
+                                    otherDot.isMatched = false;
+                                    otherDot.MakeAdjacentBomb();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     private void DestroyMatchesAt(int column, int row)
     {
         if (allDots[column, row].GetComponent<Dot>().isMatched)
         {
             //How many elements are in the matched pieces list from findmatches?
-            if (findMatches.currentMatches.Count == 4 || findMatches.currentMatches.Count == 7)
+            if (findMatches.currentMatches.Count >= 4)
             {
-                findMatches.CheckBombs();
+                CheckToMakeBombs();
             }
 
 
@@ -119,7 +213,7 @@ public class Board : MonoBehaviour
             // Destroy edilen objenin parlaması için, destroyEffect prefab kodu.
             GameObject particle = Instantiate(destroyEffect, allDots[column, row].transform.position, Quaternion.identity);
             Destroy(particle, .5f); // Kalıntı bırakmaması hafızada yer işgal etmemesi için silindi.
-            
+
             Destroy(allDots[column, row]);
             allDots[column, row] = null;
         }
@@ -133,7 +227,7 @@ public class Board : MonoBehaviour
             {
                 if (allDots[i, j] != null)
                 {
-                    DestroyMatchesAt(i,j);
+                    DestroyMatchesAt(i, j);
                 }
             }
 
@@ -153,7 +247,7 @@ public class Board : MonoBehaviour
                 {
                     nullCount++;
                 }
-                else if (nullCount >0)
+                else if (nullCount > 0)
                 {
                     allDots[i, j].GetComponent<Dot>().row -= nullCount;
                     allDots[i, j] = null; // Bug fixed
@@ -218,5 +312,5 @@ public class Board : MonoBehaviour
         currentState = GameState.move;
 
     }
-   
+
 }
