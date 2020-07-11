@@ -269,15 +269,13 @@ MonoBehaviour:
   offSet: 20
   tilePrefab: {fileID: 6991942611651029223, guid: d19fefc84539f924c9cf4a28d3780a58,
     type: 3}
+  breakableTilePrefab: {fileID: 405308368048599351, guid: 2fcb89bc89c22144685210ff4d31d121,
+    type: 3}
   dots:
   - {fileID: 8203162457966756601, guid: c69ff230b3c7d7c498933958d193c8f3, type: 3}
   - {fileID: 7023490285290869058, guid: 8ca1573c5191eee4b917208c43e64df9, type: 3}
   - {fileID: 5960388384641829075, guid: ab44671ced359a446a7b156ce9e8b11a, type: 3}
   - {fileID: 2815981307574276711, guid: 8a6555f19a3066b42a6654a921c89c6f, type: 3}
-  - {fileID: 5460734478681073196, guid: 83356295e26bfa54f975118b6d7f1591, type: 3}
-  - {fileID: 1908312927952038675, guid: 127a121141f548d42a54f18e809414c8, type: 3}
-  - {fileID: 299834454747243137, guid: c4e804f34b90ae94aac4b38851cdeb4b, type: 3}
-  - {fileID: 686902420739240959, guid: 6178e090fd97e0d48944281b8bb65288, type: 3}
   destroyEffect: {fileID: 6797851920598647572, guid: d52cbe561374eb94e83cc0ec40cdc56b,
     type: 3}
   boardLayout:
@@ -299,6 +297,24 @@ MonoBehaviour:
   - x: 5
     y: 4
     tileKind: 1
+  - x: 3
+    y: 4
+    tileKind: 1
+  - x: 2
+    y: 4
+    tileKind: 1
+  - x: 1
+    y: 4
+    tileKind: 1
+  - x: 1
+    y: 5
+    tileKind: 0
+  - x: 1
+    y: 6
+    tileKind: 0
+  - x: 1
+    y: 7
+    tileKind: 0
   currentDot: {fileID: 0}
 --- !u!1 &1888744133
 GameObject:
