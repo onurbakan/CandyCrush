@@ -162,7 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraOffset: -10
   aspectRatio: 0.625
-  padding: 2
+  padding: 4.7
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -230,6 +230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 568200490}
   - component: {fileID: 568200491}
+  - component: {fileID: 568200492}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -264,8 +265,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 1
-  width: 5
-  height: 5
+  width: 7
+  height: 10
   offSet: 20
   tilePrefab: {fileID: 6991942611651029223, guid: d19fefc84539f924c9cf4a28d3780a58,
     type: 3}
@@ -282,8 +283,78 @@ MonoBehaviour:
   - {fileID: 8203162457966756601, guid: c69ff230b3c7d7c498933958d193c8f3, type: 3}
   destroyEffect: {fileID: 6797851920598647572, guid: d52cbe561374eb94e83cc0ec40cdc56b,
     type: 3}
-  boardLayout: []
+  boardLayout:
+  - x: 0
+    y: 0
+    tileKind: 1
+  - x: 0
+    y: 9
+    tileKind: 1
+  - x: 6
+    y: 0
+    tileKind: 1
+  - x: 6
+    y: 9
+    tileKind: 1
+  - x: 0
+    y: 4
+    tileKind: 1
+  - x: 0
+    y: 5
+    tileKind: 1
+  - x: 6
+    y: 4
+    tileKind: 1
+  - x: 6
+    y: 5
+    tileKind: 1
+  - x: 5
+    y: 5
+    tileKind: 0
+  - x: 4
+    y: 5
+    tileKind: 0
+  - x: 3
+    y: 5
+    tileKind: 0
+  - x: 2
+    y: 5
+    tileKind: 0
+  - x: 1
+    y: 5
+    tileKind: 0
+  - x: 5
+    y: 4
+    tileKind: 0
+  - x: 4
+    y: 4
+    tileKind: 0
+  - x: 3
+    y: 4
+    tileKind: 0
+  - x: 2
+    y: 4
+    tileKind: 0
+  - x: 1
+    y: 4
+    tileKind: 0
   currentDot: {fileID: 0}
+--- !u!114 &568200492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568200489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5b78bc8c9a0d849864d3c8104a07fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintDelay: 5
+  hintParticle: {fileID: 8719588631652849727, guid: f375e0f3d899dfb4da6180a0e25bdd82,
+    type: 3}
+  currentHint: {fileID: 0}
 --- !u!1 &1888744133
 GameObject:
   m_ObjectHideFlags: 0
