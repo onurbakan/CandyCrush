@@ -45,11 +45,16 @@ public class Board : MonoBehaviour
     public GameObject[,] allDots;
     public Dot currentDot;
     private FindMatches findMatches;
+    public int basePieceValue = 20;
+    private int streakValue = 1;
+    private ScoreManager scoreManager;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        scoreManager = FindObjectOfType<ScoreManager>();
         breakableTiles = new BackgroundTile[width, height];
         findMatches = FindObjectOfType<FindMatches>();
         // Arraylerin birimlerini belirterek oluşturduk.
@@ -107,7 +112,8 @@ public class Board : MonoBehaviour
 
 
                     Vector2 tempPosition = new Vector2(i, j + offSet);//offset ne kadar yukardan ineceğini ayarlayan parametre
-                    GameObject backgroundTile = Instantiate(tilePrefab, tempPosition, Quaternion.identity) as GameObject;
+                    Vector2 tilePosition = new Vector2(i, j);
+                    GameObject backgroundTile = Instantiate(tilePrefab, tilePosition, Quaternion.identity) as GameObject;
                     backgroundTile.transform.parent = this.transform;
                     backgroundTile.name = "( " + i + " , " + j + " )";
                     // Hem backgroundTile'a hem dot'lara i,j şeklinde isim verdik.
@@ -300,6 +306,7 @@ public class Board : MonoBehaviour
             Destroy(particle, .5f); // Kalıntı bırakmaması hafızada yer işgal etmemesi için silindi.
 
             Destroy(allDots[column, row]);
+            scoreManager.IncreaseScore(basePieceValue * streakValue);
             allDots[column, row] = null;
         }
     }
@@ -418,6 +425,7 @@ public class Board : MonoBehaviour
 
         while (MatchesOnBoard())
         { // Match var mı diye test et bekle varsa yoket yoksa while'dan çık.
+            streakValue ++;
             yield return new WaitForSeconds(.5f);
             DestroyMatches();
         }
@@ -430,6 +438,7 @@ public class Board : MonoBehaviour
             Debug.Log("Deadlocked.!");
         }
         currentState = GameState.move;
+        streakValue = 1;
 
     }
 
