@@ -172,7 +172,7 @@ public class FindMatches : MonoBehaviour
                                     }
                                     currentDot.GetComponent<Dot>().isMatched = true;*/
 
-                                    
+
                                 }
                             }
                         }
@@ -276,14 +276,17 @@ public class FindMatches : MonoBehaviour
     {
         List<GameObject> dots = new List<GameObject>();
         for (int i = column - 1; i <= column + 1; i++)
-        { 
+        {
             for (int j = row - 1; j <= row + 1; j++)
             { // Döngüye referans aldığımız column ve rowdan bir eksik başladık ve 3x3 birimlik bir destroy birimi oluşturduk.
                 //Check if the piece is inside the board?
                 if (i >= 0 && i < board.width && j >= 0 && j < board.height)
                 {
-                    dots.Add(board.allDots[i, j]);
-                    board.allDots[i, j].GetComponent<Dot>().isMatched = true;
+                    if (board.allDots[i, j] != null)
+                    {
+                        dots.Add(board.allDots[i, j]);
+                        board.allDots[i, j].GetComponent<Dot>().isMatched = true;
+                    }
                 }
             }
         }
