@@ -14,6 +14,7 @@ TagManager:
   - Teal Dot
   - Yellow Dot
   - Color
+  - Breakable
   layers:
   - Default
   - TransparentFX
