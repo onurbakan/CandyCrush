@@ -34,15 +34,23 @@ public class TileType
 
 public class Board : MonoBehaviour
 {
+    [Header("Scriptable Object Stuff")]
+    public World world;
+    public int level;
 
     public GameState currentState = GameState.move;
+    [Header("Board Dimensions")]
     public int width;
     public int height;
     public int offSet; // Nesnelerin yukarıdan kayarak inmesi için tanımlandı.
+
+    [Header("Prefabs")]
     public GameObject tilePrefab;
     public GameObject breakableTilePrefab;
     public GameObject[] dots;
     public GameObject destroyEffect;
+
+    [Header("Layout")]
     public TileType[] boardLayout;
     private bool[,] blankSpaces;
     private BackgroundTile[,] breakableTiles;
@@ -58,6 +66,23 @@ public class Board : MonoBehaviour
     public int[] scoreGoals;
 
 
+    private void Awake()
+    {
+        if (world != null)
+        {
+            if (level < world.levels.Length)
+            {
+                if (world.levels[level] != null)
+                {
+                    width = world.levels[level].width;
+                    height = world.levels[level].height;
+                    dots = world.levels[level].dots;
+                    scoreGoals = world.levels[level].scoreGoals;
+                    boardLayout = world.levels[level].boardLayout;
+                }
+            }
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -458,9 +483,9 @@ public class Board : MonoBehaviour
 
         while (MatchesOnBoard())
         { // Match var mı diye test et bekle varsa yoket yoksa while'dan çık.
-            streakValue ++;
+            streakValue++;
             DestroyMatches();
-            yield return new WaitForSeconds(2* refillDelay);
+            yield return new WaitForSeconds(2 * refillDelay);
         }
         findMatches.currentMatches.Clear();
         currentDot = null;
@@ -586,7 +611,7 @@ public class Board : MonoBehaviour
                 if (!blankSpaces[i, j])
                 {
                     //Pick a random number
-                    int pieceToUse = Random.Range(0, newBoard.Count);                    
+                    int pieceToUse = Random.Range(0, newBoard.Count);
 
                     int maxIterations = 0;
                     while (MatchesAt(i, j, newBoard[pieceToUse]) && maxIterations < 100)
