@@ -10,10 +10,12 @@ public class ScoreManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public int score;
     public Image scoreBar;
+    private GameData gameData;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameData = FindObjectOfType<GameData>();
         board = FindObjectOfType<Board>();
         UpdateBar();
     }
@@ -27,6 +29,15 @@ public class ScoreManager : MonoBehaviour
     public void IncreaseScore(int amountToIncrease)
     {
         score += amountToIncrease;
+        if (gameData != null)
+        {
+            int highScore = gameData.saveData.highScores[board.level];
+            if (score > highScore)
+            {
+                gameData.saveData.highScores[board.level] = score;
+            }
+            gameData.Save();
+        }
         UpdateBar();
     }
 

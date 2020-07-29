@@ -14,9 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 6
   height: 8
-  boardLayout: []
+  boardLayout:
+  - x: 0
+    y: 0
+    tileKind: 0
+  - x: 2
+    y: 2
+    tileKind: 0
+  - x: 4
+    y: 4
+    tileKind: 0
   dots:
-  - {fileID: 7023490285290869058, guid: 8ca1573c5191eee4b917208c43e64df9, type: 3}
+  - {fileID: 1908312927952038675, guid: 127a121141f548d42a54f18e809414c8, type: 3}
   - {fileID: 8203162457966756601, guid: c69ff230b3c7d7c498933958d193c8f3, type: 3}
   - {fileID: 5460734478681073196, guid: 83356295e26bfa54f975118b6d7f1591, type: 3}
   - {fileID: 5960388384641829075, guid: ab44671ced359a446a7b156ce9e8b11a, type: 3}
@@ -30,7 +39,7 @@ MonoBehaviour:
     numberCollected: 0
     goalSprite: {fileID: 21300000, guid: 22075efcfa4884531917d580c319e18a, type: 3}
     matchValue: Indigo Dot
-  - numberNeeded: 5
+  - numberNeeded: 3
     numberCollected: 0
     goalSprite: {fileID: 21300000, guid: eac6fcf47ad175a459b0e2a75a7a229a, type: 3}
     matchValue: Breakable
