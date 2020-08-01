@@ -49,7 +49,8 @@ public class Dot : MonoBehaviour
 
         endGameManager = FindObjectOfType<EndGameManager>();
         hintManager = FindObjectOfType<HintManager>();
-        board = FindObjectOfType<Board>();
+        board = GameObject.FindWithTag("Board").GetComponent<Board>();
+        //board = FindObjectOfType<Board>();
         findMatches = FindObjectOfType<FindMatches>();
         //targetX = (int)transform.position.x;
         //targetY = (int)transform.position.y;
@@ -185,53 +186,45 @@ public class Dot : MonoBehaviour
         {
             //Right Swipe
             MovePiecesActual(Vector2.right);
-            /*
-            otherDot = board.allDots[column + 1, row];
-            previousRow = row; // Offset ayarlaması için previousRow kısımları buraya eklendi.
-            previousColumn = column;
-            otherDot.GetComponent<Dot>().column -= 1;
-            column += 1;
-            StartCoroutine(CheckMoveCo());
-            */
+            ///otherDot = board.allDots[column + 1, row];
+            ///previousRow = row; // Offset ayarlaması için previousRow kısımları buraya eklendi.
+            ///previousColumn = column;
+            ///otherDot.GetComponent<Dot>().column -= 1;
+            ///column += 1;
+            ///StartCoroutine(CheckMoveCo());            
         }
         else if (swipeAngle > 45 && swipeAngle <= 135 && row < board.height - 1)
         {
             //Up Swipe
             MovePiecesActual(Vector2.up);
-            /*
-            otherDot = board.allDots[column, row + 1];
-            previousRow = row;
-            previousColumn = column;
-            otherDot.GetComponent<Dot>().row -= 1;
-            row += 1;
-            StartCoroutine(CheckMoveCo());
-            */
+            ///otherDot = board.allDots[column, row + 1];
+            ///previousRow = row;
+            ///previousColumn = column;
+            ///otherDot.GetComponent<Dot>().row -= 1;
+            ///row += 1;
+            ///StartCoroutine(CheckMoveCo());            
         }
         else if ((swipeAngle > 135 || swipeAngle <= -135) && column > 0)
         {
             //Left Swipe
             MovePiecesActual(Vector2.left);
-            /*
-            otherDot = board.allDots[column - 1, row];
-            previousRow = row;
-            previousColumn = column;
-            otherDot.GetComponent<Dot>().column += 1;
-            column -= 1;
-            StartCoroutine(CheckMoveCo());
-            */
+            ///otherDot = board.allDots[column - 1, row];
+            ///previousRow = row;
+            ///previousColumn = column;
+            ///otherDot.GetComponent<Dot>().column += 1;
+            ///column -= 1;
+            ///StartCoroutine(CheckMoveCo());            
         }
         else if (swipeAngle < -45 && swipeAngle >= -135 && row > 0)
         {
             //Down Swipe
             MovePiecesActual(Vector2.down);
-            /*
-            otherDot = board.allDots[column, row - 1];
-            previousRow = row;
-            previousColumn = column;
-            otherDot.GetComponent<Dot>().row += 1;
-            row -= 1;
-            StartCoroutine(CheckMoveCo());
-            */
+            ///otherDot = board.allDots[column, row - 1];
+            ///previousRow = row;
+            ///previousColumn = column;
+            ///otherDot.GetComponent<Dot>().row += 1;
+            ///row -= 1;
+            ///StartCoroutine(CheckMoveCo());            
         }
         else
         {
@@ -270,7 +263,7 @@ public class Dot : MonoBehaviour
             }
             else
             {
-                if (endGameManager !=null)
+                if (endGameManager != null)
                 {
                     if (endGameManager.requirements.gameType == GameType.Moves)
                     {
@@ -324,31 +317,43 @@ public class Dot : MonoBehaviour
 
     public void MakeRowBomb()
     { // Row'u yok eden bomb
-        isRowBomb = true;
-        GameObject arrow = Instantiate(rowArrow, transform.position, Quaternion.identity);
-        arrow.transform.parent = this.transform;
+        if (!isColumnBomb && !isColorBomb && !isAdjacentBomb)
+        {
+            isRowBomb = true;
+            GameObject arrow = Instantiate(rowArrow, transform.position, Quaternion.identity);
+            arrow.transform.parent = this.transform;
+        }
     }
 
     public void MakeColumnBomb()
     {// Column'ı yok eden bomb
-        isColumnBomb = true;
-        GameObject arrow = Instantiate(columnArrow, transform.position, Quaternion.identity);
-        arrow.transform.parent = this.transform;        
+        if (!isRowBomb && !isColorBomb && !isAdjacentBomb)
+        {
+            isColumnBomb = true;
+            GameObject arrow = Instantiate(columnArrow, transform.position, Quaternion.identity);
+            arrow.transform.parent = this.transform;
+        }
     }
 
     public void MakeColorBomb()
     {// Color bomb
-        isColorBomb = true;
-        GameObject color = Instantiate(colorBomb, transform.position, Quaternion.identity);
-        color.transform.parent = this.transform;
-        this.gameObject.tag = "Color";
+        if (!isColumnBomb && !isRowBomb && !isAdjacentBomb)
+        {
+            isColorBomb = true;
+            GameObject color = Instantiate(colorBomb, transform.position, Quaternion.identity);
+            color.transform.parent = this.transform;
+            this.gameObject.tag = "Color";
+        }
     }
 
     public void MakeAdjacentBomb()
     {// Adjacent bomb
-        isAdjacentBomb = true;
-        GameObject marker = Instantiate(adjacentMarker, transform.position, Quaternion.identity);
-        marker.transform.parent = this.transform;
+        if (!isColumnBomb && !isColorBomb && !isRowBomb)
+        {
+            isAdjacentBomb = true;
+            GameObject marker = Instantiate(adjacentMarker, transform.position, Quaternion.identity);
+            marker.transform.parent = this.transform;
+        }
     }
 
 

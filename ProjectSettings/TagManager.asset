@@ -15,6 +15,7 @@ TagManager:
   - Yellow Dot
   - Color
   - Breakable
+  - Board
   layers:
   - Default
   - TransparentFX
