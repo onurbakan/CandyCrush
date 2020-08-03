@@ -14,6 +14,10 @@ public class Dot : MonoBehaviour
     public int targetY;
     public bool isMatched = false;
 
+
+    private Animator anim;
+    private float shineDelay;
+    private float shineDelaySeconds;
     private EndGameManager endGameManager;
     private HintManager hintManager;
     private FindMatches findMatches;
@@ -47,6 +51,10 @@ public class Dot : MonoBehaviour
         isColorBomb = false;
         isAdjacentBomb = false;
 
+        shineDelay = Random.Range(3f, 6f);
+        shineDelaySeconds = shineDelay;
+
+        anim = GetComponent<Animator>();
         endGameManager = FindObjectOfType<EndGameManager>();
         hintManager = FindObjectOfType<HintManager>();
         board = GameObject.FindWithTag("Board").GetComponent<Board>();
@@ -74,13 +82,18 @@ public class Dot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        if (isMatched)
+        shineDelaySeconds -= Time.deltaTime;
+        if (shineDelaySeconds <= 0)
         {
-            SpriteRenderer mySprite = GetComponent<SpriteRenderer>();
-            mySprite.color = new Color(1f, 1f, 1f, .2f);
-        }*/
+            shineDelaySeconds = shineDelay;
+            StartCoroutine(StartShineCo());
+        }
 
+        ///if (isMatched)
+        ///{
+        ///    SpriteRenderer mySprite = GetComponent<SpriteRenderer>();
+        ///    mySprite.color = new Color(1f, 1f, 1f, .2f);
+        ///}
         targetX = column;
         targetY = row;
         // Right-Left Move
@@ -126,6 +139,10 @@ public class Dot : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (anim != null)
+        {
+            anim.SetBool("Touched", true);
+        }
         //Destroy the hint
         if (hintManager != null)
         {
@@ -139,6 +156,7 @@ public class Dot : MonoBehaviour
 
     private void OnMouseUp()
     {
+        anim.SetBool("Touched", false);
         if (board.currentState == GameState.move)
         {
             finalTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -230,6 +248,18 @@ public class Dot : MonoBehaviour
         {
             board.currentState = GameState.move;
         }
+    }
+
+    IEnumerator StartShineCo()
+    {
+        anim.SetBool("Shine", true);
+        yield return null; // Exit the co-routine for one frame 
+        anim.SetBool("Shine", false);
+    }
+
+    public void PopAnimation()
+    {
+        anim.SetBool("Popped", true);
     }
 
     public IEnumerator CheckMoveCo()

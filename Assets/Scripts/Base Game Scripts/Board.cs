@@ -484,7 +484,8 @@ public class Board : MonoBehaviour
             GameObject particle = Instantiate(destroyEffect, allDots[column, row].transform.position, Quaternion.identity);
             Destroy(particle, .5f); // Kalıntı bırakmaması hafızada yer işgal etmemesi için silindi.
 
-            Destroy(allDots[column, row]);
+            allDots[column, row].GetComponent<Dot>().PopAnimation();
+            Destroy(allDots[column, row], .5f);
             scoreManager.IncreaseScore(basePieceValue * streakValue);
             allDots[column, row] = null;
         }
