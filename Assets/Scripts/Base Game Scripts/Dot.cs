@@ -22,8 +22,8 @@ public class Dot : MonoBehaviour
     private HintManager hintManager;
     private FindMatches findMatches;
     private Board board;
-    private Vector2 firstTouchPosition;
-    private Vector2 finalTouchPosition;
+    private Vector2 firstTouchPosition = Vector2.zero;
+    private Vector2 finalTouchPosition = Vector2.zero;
     private Vector2 tempPosition;
     public GameObject otherDot;
 
@@ -105,8 +105,8 @@ public class Dot : MonoBehaviour
             if (board.allDots[column, row] != this.gameObject)
             { // Bugs Fixed (two matches)
                 board.allDots[column, row] = this.gameObject;
+                findMatches.FindAllMatches();
             }
-            findMatches.FindAllMatches();
         }
         else
         {
@@ -125,8 +125,8 @@ public class Dot : MonoBehaviour
             if (board.allDots[column, row] != this.gameObject)
             {// Bugs Fixed (two matches)
                 board.allDots[column, row] = this.gameObject;
+                findMatches.FindAllMatches();
             }
-            findMatches.FindAllMatches();
         }
         else
         {
@@ -139,15 +139,16 @@ public class Dot : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (anim != null)
-        {
-            anim.SetBool("Touched", true);
-        }
+        ///if (anim != null)
+        ///{
+        ///    anim.SetBool("Touched", true);
+        ///}
         //Destroy the hint
         if (hintManager != null)
         {
             hintManager.DestroyHint();
         }
+
         if (board.currentState == GameState.move)
         {
             firstTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -156,7 +157,7 @@ public class Dot : MonoBehaviour
 
     private void OnMouseUp()
     {
-        anim.SetBool("Touched", false);
+        ///anim.SetBool("Touched", false);
         if (board.currentState == GameState.move)
         {
             finalTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
