@@ -12,10 +12,12 @@ public class PauseManager : MonoBehaviour
     public Image soundButton;
     public Sprite musicOnSprite;
     public Sprite musicOffSprite;
+    private SoundManager sound;
 
     // Start is called before the first frame update
     void Start()
     {
+        sound = FindObjectOfType<SoundManager>();
         // In Player Prefs, the "Sound" key is for sound 
         // If sound == 0, then mute, if sound == 1, then unmute
         if (PlayerPrefs.HasKey("Sound"))
@@ -60,17 +62,20 @@ public class PauseManager : MonoBehaviour
             {
                 soundButton.sprite = musicOnSprite;
                 PlayerPrefs.SetInt("Sound", 1);
+                sound.adjustVolume();
             }
             else
             {
                 soundButton.sprite = musicOffSprite;
                 PlayerPrefs.SetInt("Sound", 0);
+                sound.adjustVolume();
             }
         }
         else
         {
             soundButton.sprite = musicOffSprite;
             PlayerPrefs.SetInt("Sound", 1);
+            sound.adjustVolume();
         }
     }
 

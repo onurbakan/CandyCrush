@@ -416,6 +416,7 @@ MonoBehaviour:
   destroyNoise:
   - {fileID: 807828942}
   - {fileID: 1541576253}
+  backgroundMusic: {fileID: 2074583421}
 --- !u!1 &157063434
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,8 +736,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1100681029}
   - {fileID: 1948505984}
+  - {fileID: 1100681029}
   - {fileID: 1717440716}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -1841,7 +1842,7 @@ RectTransform:
   - {fileID: 781015173}
   - {fileID: 1192233651}
   m_Father: {fileID: 232221692}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -3714,7 +3715,7 @@ RectTransform:
   m_Children:
   - {fileID: 252058826}
   m_Father: {fileID: 232221692}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
