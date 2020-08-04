@@ -4,7 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Puice Dot
   - Dark Green Dot
   - Green Dot
   - Indigo Dot
@@ -13,9 +12,13 @@ TagManager:
   - Salmon Dot
   - Teal Dot
   - Yellow Dot
+  - Puice Dot
   - Color
   - Breakable
   - Board
+  - Concrete
+  - Chocolate
+  - Lock
   layers:
   - Default
   - TransparentFX
@@ -50,6 +53,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 4115338983
+    locked: 0
+  - name: Particles
+    uniqueID: 1701559851
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Markers
+    uniqueID: 3020687143
     locked: 0

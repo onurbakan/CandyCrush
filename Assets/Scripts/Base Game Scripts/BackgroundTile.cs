@@ -37,9 +37,8 @@ public class BackgroundTile : MonoBehaviour
     {
         //take the current color
         Color color = sprite.color;
-        //Get the current color's alpha value and cut it in half.
+        //Get the current color's alpha value and cut it in half.  
         float newAlpha = color.a * .5f;
         sprite.color = new Color(color.r, color.g, color.b, newAlpha);
     }
-
 }

@@ -1,29 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
+
     private Board board;
-    public TextMeshProUGUI scoreText;
+    public Text scoreText;
     public int score;
     public Image scoreBar;
     private GameData gameData;
 
-    // Start is called before the first frame update
+    // Use this for initialization
     void Start()
     {
-        gameData = FindObjectOfType<GameData>();
         board = FindObjectOfType<Board>();
+        gameData = FindObjectOfType<GameData>();
         UpdateBar();
+        if (gameData != null)
+        {
+            gameData.Load();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = score.ToString();
+        scoreText.text = "" + score;
     }
 
     public void IncreaseScore(int amountToIncrease)
@@ -45,8 +49,12 @@ public class ScoreManager : MonoBehaviour
     {
         if (board != null && scoreBar != null)
         {
+
             int length = board.scoreGoals.Length;
+
             scoreBar.fillAmount = (float)score / (float)board.scoreGoals[length - 1];
+
+
         }
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class BackToSplash : MonoBehaviour
 {
+
     public string sceneToLoad;
     private GameData gameData;
     private Board board;
@@ -23,8 +24,8 @@ public class BackToSplash : MonoBehaviour
     {
         SceneManager.LoadScene(sceneToLoad);
     }
-    
-    // Start is called before the first frame update
+
+    // Use this for initialization
     void Start()
     {
         gameData = FindObjectOfType<GameData>();
@@ -34,6 +35,6 @@ public class BackToSplash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

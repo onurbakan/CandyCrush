@@ -1,511 +1,133 @@
 fileFormatVersion: 2
-guid: eacbc41dbb8e4ad4ca32488cf1433024
+guid: 988a3fce630a14b63a3e5e82e1f1226a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8200753063566766969
+      213: 21300000
     second: Lt Green 1
   - first:
-      213: -7707465062274031902
+      213: 21300002
     second: Red 1
   - first:
-      213: -3341713634967663010
+      213: 21300004
     second: Green 1
   - first:
-      213: 744376705736303324
+      213: 21300006
     second: Orange 1
   - first:
-      213: 2546483071237738640
+      213: 21300008
     second: Blue 1
   - first:
-      213: -5682091620870042725
+      213: 21300010
     second: Gray 1
   - first:
-      213: -3577818998671655312
+      213: 21300012
     second: Lt Green 2
   - first:
-      213: 1026480932786116380
+      213: 21300014
     second: Red 2
   - first:
-      213: -3294949036715978871
+      213: 21300016
     second: Green 2
   - first:
-      213: 5185095977495115759
+      213: 21300018
     second: Orange 2
   - first:
-      213: 8438619614108475959
+      213: 21300020
     second: Blue 2
   - first:
-      213: -2603809038698049626
+      213: 21300022
     second: Gray 2
   - first:
-      213: 1904495456834232225
+      213: 21300024
     second: Lt Green 3
   - first:
-      213: 7926427103531628076
+      213: 21300026
     second: Red 3
   - first:
-      213: -6727120835001465942
+      213: 21300028
     second: Green 3
   - first:
-      213: -3094767024573165185
+      213: 21300030
     second: Orange 3
   - first:
-      213: -885978619517566656
+      213: 21300032
     second: Blue 3
   - first:
-      213: 4841526832660062627
+      213: 21300034
     second: Gray 3
   - first:
-      213: 5147749277284378138
+      213: 21300036
     second: Lt Green 4
   - first:
-      213: 4030215585061680484
+      213: 21300038
     second: Red 4
   - first:
-      213: -9022215443827216769
+      213: 21300040
     second: Green 4
   - first:
-      213: 8268811758730429870
+      213: 21300042
     second: Orange 4
   - first:
-      213: 2350774631231994810
+      213: 21300044
     second: Blue 4
   - first:
-      213: 2369436144379065331
+      213: 21300046
     second: Gray 4
   - first:
-      213: -3198346946544867050
+      213: 21300048
     second: Lt Green 5
   - first:
-      213: 7526357791358515219
-    second: Red 5
+      213: 21300050
+    second: Red 15
   - first:
-      213: 4733036294067590332
+      213: 21300052
     second: Green 5
   - first:
-      213: -2690318226489058920
+      213: 21300054
     second: Orange 5
   - first:
-      213: 7354861878588220329
+      213: 21300056
     second: Blue 5
   - first:
-      213: -622552791202627099
+      213: 21300058
     second: Gray 5
   - first:
-      213: -8977304704921552493
+      213: 21300060
     second: Lt Green 6
   - first:
-      213: 8579432892286224117
+      213: 21300062
     second: Red 6
   - first:
-      213: 8371561339461171880
+      213: 21300064
     second: Green 6
   - first:
-      213: -470517028041014135
+      213: 21300066
     second: Orange 6
   - first:
-      213: 186932763026760313
+      213: 21300068
     second: Blue 6
   - first:
-      213: 6052219309616980090
+      213: 21300070
     second: Gray 6
   - first:
-      213: 5533111921766144802
+      213: 21300072
     second: Lt Green 7
   - first:
-      213: -7715014887981459908
+      213: 21300074
     second: Red 7
   - first:
-      213: 8808552696071751822
+      213: 21300076
     second: Green 7
   - first:
-      213: -9103849220599652387
+      213: 21300078
     second: Orange 7
   - first:
-      213: 7652549357484599159
+      213: 21300080
     second: Blue 7
   - first:
-      213: 8534952137141175706
+      213: 21300082
     second: Gray 7
-  - first:
-      213: 8879003797461219388
-    second: Candies_Jerom_CCBYSA3_42
-  - first:
-      213: -7774635432963158729
-    second: Candies_Jerom_CCBYSA3_43
-  - first:
-      213: 8682235180863435704
-    second: Candies_Jerom_CCBYSA3_44
-  - first:
-      213: 6558405576784563876
-    second: Candies_Jerom_CCBYSA3_45
-  - first:
-      213: -4457905670618631205
-    second: Candies_Jerom_CCBYSA3_46
-  - first:
-      213: 3412458316194089193
-    second: Candies_Jerom_CCBYSA3_47
-  - first:
-      213: 3968064555513565542
-    second: Candies_Jerom_CCBYSA3_48
-  - first:
-      213: 7942723104607886036
-    second: Candies_Jerom_CCBYSA3_49
-  - first:
-      213: -5722756116493878844
-    second: Candies_Jerom_CCBYSA3_50
-  - first:
-      213: -1498376557172915768
-    second: Candies_Jerom_CCBYSA3_51
-  - first:
-      213: -6584523071241173084
-    second: Candies_Jerom_CCBYSA3_52
-  - first:
-      213: -7649978645359063289
-    second: Candies_Jerom_CCBYSA3_53
-  - first:
-      213: -5117754338235142624
-    second: Candies_Jerom_CCBYSA3_54
-  - first:
-      213: 1469767946255524313
-    second: Candies_Jerom_CCBYSA3_55
-  - first:
-      213: -4884436373090100692
-    second: Candies_Jerom_CCBYSA3_56
-  - first:
-      213: -5941983784243791398
-    second: Candies_Jerom_CCBYSA3_57
-  - first:
-      213: -4585240461590973943
-    second: Candies_Jerom_CCBYSA3_58
-  - first:
-      213: -6703908010363682215
-    second: Candies_Jerom_CCBYSA3_59
-  - first:
-      213: 4245835595023992248
-    second: Candies_Jerom_CCBYSA3_60
-  - first:
-      213: -8320326349154873173
-    second: Candies_Jerom_CCBYSA3_61
-  - first:
-      213: 1933420535705554574
-    second: Candies_Jerom_CCBYSA3_62
-  - first:
-      213: -55970949746297323
-    second: Candies_Jerom_CCBYSA3_63
-  - first:
-      213: 170534465706344416
-    second: Candies_Jerom_CCBYSA3_64
-  - first:
-      213: -7409315538945276599
-    second: Candies_Jerom_CCBYSA3_65
-  - first:
-      213: 5345195533644335663
-    second: Candies_Jerom_CCBYSA3_66
-  - first:
-      213: 1036578044148824930
-    second: Candies_Jerom_CCBYSA3_67
-  - first:
-      213: -8548105615918567641
-    second: Candies_Jerom_CCBYSA3_68
-  - first:
-      213: 6650800629846641392
-    second: Candies_Jerom_CCBYSA3_69
-  - first:
-      213: -604863004037804280
-    second: Candies_Jerom_CCBYSA3_70
-  - first:
-      213: 6968656576928590595
-    second: Candies_Jerom_CCBYSA3_71
-  - first:
-      213: -5167592825210589372
-    second: Candies_Jerom_CCBYSA3_72
-  - first:
-      213: 8368553963539561362
-    second: Candies_Jerom_CCBYSA3_73
-  - first:
-      213: 4889713922792225845
-    second: Candies_Jerom_CCBYSA3_74
-  - first:
-      213: 424405915200369846
-    second: Candies_Jerom_CCBYSA3_75
-  - first:
-      213: 7210644724293712128
-    second: Candies_Jerom_CCBYSA3_76
-  - first:
-      213: 958645537876169867
-    second: Candies_Jerom_CCBYSA3_77
-  - first:
-      213: -6036005442990676786
-    second: Candies_Jerom_CCBYSA3_78
-  - first:
-      213: -3647384352239403598
-    second: Candies_Jerom_CCBYSA3_79
-  - first:
-      213: -684280537019792238
-    second: Candies_Jerom_CCBYSA3_80
-  - first:
-      213: -5379872438376626999
-    second: Candies_Jerom_CCBYSA3_81
-  - first:
-      213: 3177253458296456384
-    second: Candies_Jerom_CCBYSA3_82
-  - first:
-      213: -3192114423864414973
-    second: Candies_Jerom_CCBYSA3_83
-  - first:
-      213: 511903138120614586
-    second: Candies_Jerom_CCBYSA3_84
-  - first:
-      213: -2851257041192321066
-    second: Candies_Jerom_CCBYSA3_85
-  - first:
-      213: -8849370610136723611
-    second: Candies_Jerom_CCBYSA3_86
-  - first:
-      213: 1576227733779673698
-    second: Candies_Jerom_CCBYSA3_87
-  - first:
-      213: -9042042430160813939
-    second: Candies_Jerom_CCBYSA3_88
-  - first:
-      213: -6230320611190188336
-    second: Candies_Jerom_CCBYSA3_89
-  - first:
-      213: -4152542867705554593
-    second: Candies_Jerom_CCBYSA3_90
-  - first:
-      213: 4842267109077454370
-    second: Candies_Jerom_CCBYSA3_91
-  - first:
-      213: -8956311034614856398
-    second: Candies_Jerom_CCBYSA3_92
-  - first:
-      213: -3239055642403013984
-    second: Candies_Jerom_CCBYSA3_93
-  - first:
-      213: 1462785984184976256
-    second: Candies_Jerom_CCBYSA3_94
-  - first:
-      213: -2141571801852869683
-    second: Candies_Jerom_CCBYSA3_95
-  - first:
-      213: 736444415990396150
-    second: Candies_Jerom_CCBYSA3_96
-  - first:
-      213: 9049486185225723122
-    second: Candies_Jerom_CCBYSA3_97
-  - first:
-      213: 1349164291752527230
-    second: Candies_Jerom_CCBYSA3_98
-  - first:
-      213: -192186375649512085
-    second: Candies_Jerom_CCBYSA3_99
-  - first:
-      213: 3774194420386419290
-    second: Candies_Jerom_CCBYSA3_100
-  - first:
-      213: -5928618062220552761
-    second: Candies_Jerom_CCBYSA3_101
-  - first:
-      213: -7853448953580963715
-    second: Candies_Jerom_CCBYSA3_102
-  - first:
-      213: 8456828973412401234
-    second: Candies_Jerom_CCBYSA3_103
-  - first:
-      213: 5775644941829673996
-    second: Candies_Jerom_CCBYSA3_104
-  - first:
-      213: -2811220770480995751
-    second: Candies_Jerom_CCBYSA3_105
-  - first:
-      213: 2280340411138230913
-    second: Candies_Jerom_CCBYSA3_106
-  - first:
-      213: -1517583393391720882
-    second: Candies_Jerom_CCBYSA3_107
-  - first:
-      213: -4172649704214718733
-    second: Candies_Jerom_CCBYSA3_108
-  - first:
-      213: -3291126581230325507
-    second: Candies_Jerom_CCBYSA3_109
-  - first:
-      213: -7531694131746600975
-    second: Candies_Jerom_CCBYSA3_110
-  - first:
-      213: -8485225687131602645
-    second: Candies_Jerom_CCBYSA3_111
-  - first:
-      213: 3552019206058748101
-    second: Candies_Jerom_CCBYSA3_112
-  - first:
-      213: -2363260019751618059
-    second: Candies_Jerom_CCBYSA3_113
-  - first:
-      213: 467996793478098691
-    second: Candies_Jerom_CCBYSA3_114
-  - first:
-      213: 4321999409425929925
-    second: Candies_Jerom_CCBYSA3_115
-  - first:
-      213: -6985342007471872964
-    second: Candies_Jerom_CCBYSA3_116
-  - first:
-      213: -4881274880365779246
-    second: Candies_Jerom_CCBYSA3_117
-  - first:
-      213: -7112120385875681350
-    second: Candies_Jerom_CCBYSA3_118
-  - first:
-      213: -2491234073349228725
-    second: Candies_Jerom_CCBYSA3_119
-  - first:
-      213: 5282068617526609875
-    second: Candies_Jerom_CCBYSA3_120
-  - first:
-      213: -6316571466565227467
-    second: Candies_Jerom_CCBYSA3_121
-  - first:
-      213: 3869661908232840381
-    second: Candies_Jerom_CCBYSA3_122
-  - first:
-      213: -7476421678015944735
-    second: Candies_Jerom_CCBYSA3_123
-  - first:
-      213: 6812588169798146708
-    second: Candies_Jerom_CCBYSA3_124
-  - first:
-      213: -6082556624793332696
-    second: Candies_Jerom_CCBYSA3_125
-  - first:
-      213: 2286037992611408729
-    second: Candies_Jerom_CCBYSA3_126
-  - first:
-      213: 3706046835721481602
-    second: Candies_Jerom_CCBYSA3_127
-  - first:
-      213: 1021156174833678506
-    second: Candies_Jerom_CCBYSA3_128
-  - first:
-      213: -3058313083619256456
-    second: Candies_Jerom_CCBYSA3_129
-  - first:
-      213: 3611601510394425746
-    second: Candies_Jerom_CCBYSA3_130
-  - first:
-      213: -6810395664828855433
-    second: Candies_Jerom_CCBYSA3_131
-  - first:
-      213: 1320166127909199816
-    second: Candies_Jerom_CCBYSA3_132
-  - first:
-      213: 7275857961212362059
-    second: Candies_Jerom_CCBYSA3_133
-  - first:
-      213: -3327163343831856366
-    second: Candies_Jerom_CCBYSA3_134
-  - first:
-      213: 5184421351865218907
-    second: Candies_Jerom_CCBYSA3_135
-  - first:
-      213: -8623286081770198013
-    second: Candies_Jerom_CCBYSA3_136
-  - first:
-      213: 866182040686583115
-    second: Candies_Jerom_CCBYSA3_137
-  - first:
-      213: 3818822121986638681
-    second: Candies_Jerom_CCBYSA3_138
-  - first:
-      213: 9151075646800514722
-    second: Candies_Jerom_CCBYSA3_139
-  - first:
-      213: 5091470013757666105
-    second: Candies_Jerom_CCBYSA3_140
-  - first:
-      213: -1875089828918350738
-    second: Candies_Jerom_CCBYSA3_141
-  - first:
-      213: -5594220362417810031
-    second: Candies_Jerom_CCBYSA3_142
-  - first:
-      213: -7054862666444680886
-    second: Candies_Jerom_CCBYSA3_143
-  - first:
-      213: -773562361070143852
-    second: Candies_Jerom_CCBYSA3_144
-  - first:
-      213: 5654050914117436667
-    second: Candies_Jerom_CCBYSA3_145
-  - first:
-      213: 8207913213178946411
-    second: Candies_Jerom_CCBYSA3_146
-  - first:
-      213: -667789584856505911
-    second: Candies_Jerom_CCBYSA3_147
-  - first:
-      213: -333827088934514163
-    second: Candies_Jerom_CCBYSA3_148
-  - first:
-      213: 3381671026206698597
-    second: Candies_Jerom_CCBYSA3_149
-  - first:
-      213: 3371061591102979535
-    second: Candies_Jerom_CCBYSA3_150
-  - first:
-      213: -2179397711302048091
-    second: Candies_Jerom_CCBYSA3_151
-  - first:
-      213: 4150635518805486025
-    second: Candies_Jerom_CCBYSA3_152
-  - first:
-      213: -5281664049403168017
-    second: Candies_Jerom_CCBYSA3_153
-  - first:
-      213: 4359149480418011021
-    second: Candies_Jerom_CCBYSA3_154
-  - first:
-      213: 7775468235157070798
-    second: Candies_Jerom_CCBYSA3_155
-  - first:
-      213: 3734874899291235331
-    second: Candies_Jerom_CCBYSA3_156
-  - first:
-      213: 3090210348661835817
-    second: Candies_Jerom_CCBYSA3_157
-  - first:
-      213: 1118563919956560078
-    second: Candies_Jerom_CCBYSA3_158
-  - first:
-      213: -594716550434050710
-    second: Candies_Jerom_CCBYSA3_159
-  - first:
-      213: -3120600636459093066
-    second: Candies_Jerom_CCBYSA3_160
-  - first:
-      213: -5782128005845328209
-    second: Candies_Jerom_CCBYSA3_161
-  - first:
-      213: -6459943274794677790
-    second: Candies_Jerom_CCBYSA3_162
-  - first:
-      213: 5141573996366443894
-    second: Candies_Jerom_CCBYSA3_163
-  - first:
-      213: 1781677836167736819
-    second: Candies_Jerom_CCBYSA3_164
-  - first:
-      213: 1767721005994798530
-    second: Candies_Jerom_CCBYSA3_165
-  - first:
-      213: -9066597161368980796
-    second: Candies_Jerom_CCBYSA3_166
-  - first:
-      213: -3784746454863849946
-    second: Candies_Jerom_CCBYSA3_167
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -561,7 +183,7 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -574,7 +196,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -586,7 +208,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 3
     buildTarget: iPhone
     maxTextureSize: 2048
@@ -598,7 +220,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
@@ -610,7 +232,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
@@ -622,7 +244,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -641,8 +263,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 973f79c367deec170800000000000000
-      internalID: 8200753063566766969
+      spriteID: 5ac9b7cef8c8f4784a8a60fec5cbe5e7
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -651,7 +273,7 @@ TextureImporter:
       name: Red 1
       rect:
         serializedVersion: 2
-        x: 99
+        x: 100
         y: 600
         width: 100
         height: 100
@@ -662,8 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ee1c6c9c55990590800000000000000
-      internalID: -7707465062274031902
+      spriteID: 91ae8f100493d46a5ab78a0116a3bf5d
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -683,8 +305,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5e4ca67729df91d0800000000000000
-      internalID: -3341713634967663010
+      spriteID: 35352093524314ad39e5370c76955e5b
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -704,8 +326,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd2ec748bae845a00800000000000000
-      internalID: 744376705736303324
+      spriteID: 9375f9803b4c94a25a18af65b99ce7cf
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
@@ -725,8 +347,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 090dba78cdce65320800000000000000
-      internalID: 2546483071237738640
+      spriteID: 1d21b901663a341c5825ee79992728a9
+      internalID: 21300008
       vertices: []
       indices: 
       edges: []
@@ -746,8 +368,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9b41dc96c72521b0800000000000000
-      internalID: -5682091620870042725
+      spriteID: c5ecbeecabd2b41bfaa7312cb443d920
+      internalID: 21300010
       vertices: []
       indices: 
       edges: []
@@ -767,8 +389,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07e3889a398095ec0800000000000000
-      internalID: -3577818998671655312
+      spriteID: dd455ee617b5240f1bcca1fb9ecc57dd
+      internalID: 21300012
       vertices: []
       indices: 
       edges: []
@@ -788,8 +410,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c179d6748face3e00800000000000000
-      internalID: 1026480932786116380
+      spriteID: b2f241fec7c294efb9c1729f173add8e
+      internalID: 21300014
       vertices: []
       indices: 
       edges: []
@@ -809,8 +431,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98f4789fe4df542d0800000000000000
-      internalID: -3294949036715978871
+      spriteID: d2270c5f0fb5541fc98f626412663ee2
+      internalID: 21300016
       vertices: []
       indices: 
       edges: []
@@ -830,8 +452,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe737e8d15925f740800000000000000
-      internalID: 5185095977495115759
+      spriteID: aed5fdae6f7a44a7fa368330eeed945f
+      internalID: 21300018
       vertices: []
       indices: 
       edges: []
@@ -851,8 +473,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 732649d44dffb1570800000000000000
-      internalID: 8438619614108475959
+      spriteID: 4d5e8557863b94a0cb9aa369d03fa080
+      internalID: 21300020
       vertices: []
       indices: 
       edges: []
@@ -872,8 +494,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6af837199796ddbd0800000000000000
-      internalID: -2603809038698049626
+      spriteID: e478c11b843414843bdaf0a93f7d6add
+      internalID: 21300022
       vertices: []
       indices: 
       edges: []
@@ -893,8 +515,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1af13fc07802e6a10800000000000000
-      internalID: 1904495456834232225
+      spriteID: 3046072ba45fa433a921af1be2a04098
+      internalID: 21300024
       vertices: []
       indices: 
       edges: []
@@ -914,8 +536,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c26f7046473500e60800000000000000
-      internalID: 7926427103531628076
+      spriteID: f52ea5b5f0b7b4b3aa36577b8619767b
+      internalID: 21300026
       vertices: []
       indices: 
       edges: []
@@ -935,8 +557,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa3cb9c0e3774a2a0800000000000000
-      internalID: -6727120835001465942
+      spriteID: 752442f25707748b694deb11b5a48908
+      internalID: 21300028
       vertices: []
       indices: 
       edges: []
@@ -956,8 +578,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7159b5b9cd2d05d0800000000000000
-      internalID: -3094767024573165185
+      spriteID: 05e3085c67253478abe079d736485a10
+      internalID: 21300030
       vertices: []
       indices: 
       edges: []
@@ -977,8 +599,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0418011c32f54b3f0800000000000000
-      internalID: -885978619517566656
+      spriteID: 9247f3631178346318cbcaf3d0cb93ff
+      internalID: 21300032
       vertices: []
       indices: 
       edges: []
@@ -998,8 +620,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a1a937b00f803340800000000000000
-      internalID: 4841526832660062627
+      spriteID: 90420c3bddd744a9f93b8e524aefd2ba
+      internalID: 21300034
       vertices: []
       indices: 
       edges: []
@@ -1019,8 +641,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a162f4991ba707740800000000000000
-      internalID: 5147749277284378138
+      spriteID: adf39dbb5c42f49baac5b5dbbe5ab24e
+      internalID: 21300036
       vertices: []
       indices: 
       edges: []
@@ -1040,8 +662,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46538dbb8b33ee730800000000000000
-      internalID: 4030215585061680484
+      spriteID: f70bf8c7d07664eaa96690ae8d074753
+      internalID: 21300038
       vertices: []
       indices: 
       edges: []
@@ -1061,8 +683,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7ea2a70bd6aac280800000000000000
-      internalID: -9022215443827216769
+      spriteID: e04b0d88283bb4c0cb3966f594a4d503
+      internalID: 21300040
       vertices: []
       indices: 
       edges: []
@@ -1082,8 +704,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea543b90c78b0c270800000000000000
-      internalID: 8268811758730429870
+      spriteID: 6ef00c2d5c60d4aa3b7f124da4875f68
+      internalID: 21300042
       vertices: []
       indices: 
       edges: []
@@ -1103,8 +725,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abb35997211af9020800000000000000
-      internalID: 2350774631231994810
+      spriteID: 19ded3f2d6ab24cbca0bb955c85b01ff
+      internalID: 21300044
       vertices: []
       indices: 
       edges: []
@@ -1124,8 +746,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f37fa79e9de1e020800000000000000
-      internalID: 2369436144379065331
+      spriteID: bd7f4d352eda447e18ac37e6a6257383
+      internalID: 21300046
       vertices: []
       indices: 
       edges: []
@@ -1145,14 +767,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 619ecbec5603d93d0800000000000000
-      internalID: -3198346946544867050
+      spriteID: 95020681710b14a01a63b5f35a254dfc
+      internalID: 21300048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red 5
+      name: Red 15
       rect:
         serializedVersion: 2
         x: 100
@@ -1166,8 +788,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 318fa6ee88ef27860800000000000000
-      internalID: 7526357791358515219
+      spriteID: 53e1e9a51fa3f4f1abb902684f12355a
+      internalID: 21300050
       vertices: []
       indices: 
       edges: []
@@ -1176,8 +798,8 @@ TextureImporter:
       name: Green 5
       rect:
         serializedVersion: 2
-        x: 197
-        y: 198
+        x: 200
+        y: 200
         width: 100
         height: 100
       alignment: 0
@@ -1187,8 +809,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb41ee8ce6f1fa140800000000000000
-      internalID: 4733036294067590332
+      spriteID: 93ade0442db734d1b8c14f045c1fa88b
+      internalID: 21300052
       vertices: []
       indices: 
       edges: []
@@ -1208,8 +830,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8995c51b3d11aaad0800000000000000
-      internalID: -2690318226489058920
+      spriteID: 57716d819faee41ea8795f23e34f9ca9
+      internalID: 21300054
       vertices: []
       indices: 
       edges: []
@@ -1229,8 +851,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a3205d29e7b11660800000000000000
-      internalID: 7354861878588220329
+      spriteID: 2e9d3ff15011246dead1bc6b816a3eb1
+      internalID: 21300056
       vertices: []
       indices: 
       edges: []
@@ -1250,8 +872,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e1807ae88f3c57f0800000000000000
-      internalID: -622552791202627099
+      spriteID: ad03eb3c1e9b64045a9cc77b83229bf9
+      internalID: 21300058
       vertices: []
       indices: 
       edges: []
@@ -1271,8 +893,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39935b64fe43a6380800000000000000
-      internalID: -8977304704921552493
+      spriteID: 2d95b5cdf97ee47e58b9a0fe0debe5e1
+      internalID: 21300060
       vertices: []
       indices: 
       edges: []
@@ -1292,8 +914,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f6c50f72c4401770800000000000000
-      internalID: 8579432892286224117
+      spriteID: b35b4e69a71384dbda25e59cbd273184
+      internalID: 21300062
       vertices: []
       indices: 
       edges: []
@@ -1313,8 +935,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8aaf9fd0fa2cd2470800000000000000
-      internalID: 8371561339461171880
+      spriteID: 46ca17dc7e54548cf97c6fe72f5528ba
+      internalID: 21300064
       vertices: []
       indices: 
       edges: []
@@ -1334,8 +956,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 984c7d281436879f0800000000000000
-      internalID: -470517028041014135
+      spriteID: 4e6ad1927338645c4a9c941b3ee3debd
+      internalID: 21300066
       vertices: []
       indices: 
       edges: []
@@ -1344,7 +966,7 @@ TextureImporter:
       name: Blue 6
       rect:
         serializedVersion: 2
-        x: 401
+        x: 400
         y: 100
         width: 100
         height: 100
@@ -1355,8 +977,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 972a7198b5e189200800000000000000
-      internalID: 186932763026760313
+      spriteID: 7a0f4527a91a44abeab21b925e01218c
+      internalID: 21300068
       vertices: []
       indices: 
       edges: []
@@ -1376,8 +998,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a70ea74656dcdf350800000000000000
-      internalID: 6052219309616980090
+      spriteID: cdcef6d92c25548cf95d6a0d1ae44b7d
+      internalID: 21300070
       vertices: []
       indices: 
       edges: []
@@ -1397,8 +1019,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22b99572aff89cc40800000000000000
-      internalID: 5533111921766144802
+      spriteID: 5d2b9501a759a472598d2561a76dde8a
+      internalID: 21300072
       vertices: []
       indices: 
       edges: []
@@ -1418,8 +1040,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c36d305d5d2cee490800000000000000
-      internalID: -7715014887981459908
+      spriteID: 33b50c8d4f73e484b9fa7e8ffefe1c39
+      internalID: 21300074
       vertices: []
       indices: 
       edges: []
@@ -1439,8 +1061,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e888aa2e1044e3a70800000000000000
-      internalID: 8808552696071751822
+      spriteID: 20d9d8fa7a1334754bfccadc24c37b87
+      internalID: 21300076
       vertices: []
       indices: 
       edges: []
@@ -1460,8 +1082,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ddfd07d3e51a8a180800000000000000
-      internalID: -9103849220599652387
+      spriteID: 61748deecba83434eabb1daa17b57390
+      internalID: 21300078
       vertices: []
       indices: 
       edges: []
@@ -1481,8 +1103,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 777630f7811533a60800000000000000
-      internalID: 7652549357484599159
+      spriteID: b982cc157b8c2499a9dc15bcbaed380b
+      internalID: 21300080
       vertices: []
       indices: 
       edges: []
@@ -1502,8 +1124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a95c245afbd327670800000000000000
-      internalID: 8534952137141175706
+      spriteID: 95b35a5de8dec46e5b9b58f3f5fdbc65
+      internalID: 21300082
       vertices: []
       indices: 
       edges: []
@@ -1511,7 +1133,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: bd056a10b9ba845afbadfd5ceae78705
     internalID: 0
     vertices: []
     indices: 

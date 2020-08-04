@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class LevelButton : MonoBehaviour
 {
+
     [Header("Active Stuff")]
     public bool isActive;
     public Sprite activeSprite;
@@ -16,22 +16,21 @@ public class LevelButton : MonoBehaviour
 
     [Header("Level UI")]
     public Image[] stars;
-    public TextMeshProUGUI levelText;
+    public Text levelText;
     public int level;
     public GameObject confirmPanel;
 
 
     private GameData gameData;
-        
 
-    // Start is called before the first frame update
+    // Use this for initialization
     void Start()
     {
         gameData = FindObjectOfType<GameData>();
         buttonImage = GetComponent<Image>();
         myButton = GetComponent<Button>();
         LoadData();
-        ActiveStars();
+        ActivateStars();
         ShowLevel();
         DecideSprite();
     }
@@ -41,7 +40,7 @@ public class LevelButton : MonoBehaviour
         //Is GameData present?
         if (gameData != null)
         {
-            // Decide if the level is active
+            //Decide if the level is active
             if (gameData.saveData.isActive[level - 1])
             {
                 isActive = true;
@@ -50,15 +49,16 @@ public class LevelButton : MonoBehaviour
             {
                 isActive = false;
             }
-            // Decide how many stars to activate
+            //Decide how many stars to activate
             starsActive = gameData.saveData.stars[level - 1];
         }
     }
 
-    void ActiveStars()
-    {       
+    void ActivateStars()
+    {
         for (int i = 0; i < starsActive; i++)
         {
+
             stars[i].enabled = true;
         }
     }
@@ -87,13 +87,13 @@ public class LevelButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void ConfirmPanel(int level)
     {
         confirmPanel.GetComponent<ConfirmPanel>().level = level;
         confirmPanel.SetActive(true);
-    }
 
+    }
 }

@@ -2,18 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-
 
 public class GoalPanel : MonoBehaviour
 {
 
     public Image thisImage;
     public Sprite thisSprite;
-    public TextMeshProUGUI thisText;
+    public Text thisText;
     public string thisString;
 
-    // Start is called before the first frame update
+    // Use this for initialization
     void Start()
     {
         Setup();

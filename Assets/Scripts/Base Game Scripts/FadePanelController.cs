@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FadePanelController : MonoBehaviour
 {
+
     public Animator panelAnim;
     public Animator gameInfoAnim;
 
@@ -14,7 +15,7 @@ public class FadePanelController : MonoBehaviour
             panelAnim.SetBool("Out", true);
             gameInfoAnim.SetBool("Out", true);
             StartCoroutine(GameStartCo());
-        }        
+        }
     }
 
     public void GameOver()
@@ -29,5 +30,4 @@ public class FadePanelController : MonoBehaviour
         Board board = FindObjectOfType<Board>();
         board.currentState = GameState.move;
     }
-
 }

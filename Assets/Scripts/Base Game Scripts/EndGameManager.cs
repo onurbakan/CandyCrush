@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +9,7 @@ public enum GameType
     Time
 }
 
-[Serializable]
+[System.Serializable]
 public class EndGameRequirements
 {
     public GameType gameType;
@@ -20,19 +18,19 @@ public class EndGameRequirements
 
 public class EndGameManager : MonoBehaviour
 {
-    
+
+
     public GameObject movesLabel;
     public GameObject timeLabel;
     public GameObject youWinPanel;
     public GameObject tryAgainPanel;
-
-    public TextMeshProUGUI counter;
+    public Text counter;
     public EndGameRequirements requirements;
     public int currentCounterValue;
     private Board board;
     private float timerSeconds;
 
-    // Start is called before the first frame update
+    // Use this for initialization
     void Start()
     {
         board = FindObjectOfType<Board>();
@@ -78,12 +76,12 @@ public class EndGameManager : MonoBehaviour
         {
             currentCounterValue--;
             counter.text = "" + currentCounterValue;
-
             if (currentCounterValue <= 0)
             {
                 LoseGame();
             }
         }
+
     }
 
     public void WinGame()

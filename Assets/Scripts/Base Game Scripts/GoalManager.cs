@@ -22,7 +22,7 @@ public class GoalManager : MonoBehaviour
     private Board board;
     private EndGameManager endGame;
 
-    // Start is called before the first frame update
+    // Use this for initialization
     void Start()
     {
         board = FindObjectOfType<Board>();
@@ -93,7 +93,6 @@ public class GoalManager : MonoBehaviour
                 endGame.WinGame();
             }
             Debug.Log("You win!");
-
         }
     }
 

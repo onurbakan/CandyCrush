@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+
     public AudioSource[] destroyNoise;
 
     public void PlayRandomDestroyNoise()
@@ -13,6 +14,4 @@ public class SoundManager : MonoBehaviour
         //play that clip
         destroyNoise[clipToPlay].Play();
     }
-
-   
 }

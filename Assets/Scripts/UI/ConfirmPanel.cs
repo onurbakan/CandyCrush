@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 public class ConfirmPanel : MonoBehaviour
 {
+
     [Header("Level Information")]
     public string levelToLoad;
     public int level;
@@ -14,19 +14,19 @@ public class ConfirmPanel : MonoBehaviour
     private int starsActive;
     private int highScore;
 
-    [Header("UI Stuff")]
+    [Header("UI stuff")]
     public Image[] stars;
-    public TextMeshProUGUI highScoreText;
-    public TextMeshProUGUI starText;
+    public Text highScoreText;
+    public Text starText;
 
- 
-        
-    // Start is called before the first frame update
+
+
+    // Use this for initialization
     void OnEnable()
     {
         gameData = FindObjectOfType<GameData>();
         LoadData();
-        ActiveStars();
+        ActivateStars();
         SetText();
     }
 
@@ -45,7 +45,7 @@ public class ConfirmPanel : MonoBehaviour
         starText.text = "" + starsActive + "/3";
     }
 
-    void ActiveStars()
+    void ActivateStars()
     {
         //COME BACK TO THIS WHEN THE BINARY FILE IS DONE!!!
         for (int i = 0; i < starsActive; i++)
@@ -57,16 +57,18 @@ public class ConfirmPanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void Cancel()
     {
+
         this.gameObject.SetActive(false);
     }
 
     public void Play()
     {
+        gameData.Save();
         PlayerPrefs.SetInt("Current Level", level - 1);
         SceneManager.LoadScene(levelToLoad);
     }

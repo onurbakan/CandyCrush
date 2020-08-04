@@ -4,31 +4,30 @@ using UnityEngine;
 
 public class HintManager : MonoBehaviour
 {
+
     private Board board;
     public float hintDelay;
     private float hintDelaySeconds;
     public GameObject hintParticle;
     public GameObject currentHint;
 
-
-    // Start is called before the first frame update
+    // Use this for initialization
     void Start()
     {
         board = FindObjectOfType<Board>();
-        hintDelaySeconds = hintDelay;        
+        hintDelaySeconds = hintDelay;
     }
 
     // Update is called once per frame
     void Update()
     {
         hintDelaySeconds -= Time.deltaTime;
-        //Debug.Log("hintDelaySeconds" + hintDelaySeconds);
-        //Debug.Log("Time.deltaTime" + Time.deltaTime);
-        if (hintDelaySeconds <= 0 && currentHint ==null)
+        if (hintDelaySeconds <= 0 && currentHint == null)
         {
             MarkHint();
             hintDelaySeconds = hintDelay;
         }
+
     }
 
     //First, I want to find all possible matches on the board
@@ -53,6 +52,7 @@ public class HintManager : MonoBehaviour
                         if (board.SwitchAndCheck(i, j, Vector2.up))
                         {
                             possibleMoves.Add(board.allDots[i, j]);
+
                         }
                     }
                 }

@@ -3,27 +3,45 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b17cfed82aa4b9d4c9d353430dee30e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b2623c85e4e742cd9671f50474c7b0a, type: 3}
   m_Name: Level 3
   m_EditorClassIdentifier: 
-  width: 4
-  height: 4
-  boardLayout: []
+  width: 8
+  height: 9
+  boardLayout:
+  - x: 0
+    y: 0
+    tileKind: 1
+  - x: 7
+    y: 8
+    tileKind: 1
+  - x: 0
+    y: 8
+    tileKind: 1
+  - x: 7
+    y: 0
+    tileKind: 1
+  - x: 3
+    y: 3
+    tileKind: 0
+  - x: 3
+    y: 4
+    tileKind: 0
   dots:
-  - {fileID: 4195474078684009168, guid: c69ff230b3c7d7c498933958d193c8f3, type: 3}
-  - {fileID: 3492295816716583694, guid: 83356295e26bfa54f975118b6d7f1591, type: 3}
-  - {fileID: 486493116963484253, guid: ab44671ced359a446a7b156ce9e8b11a, type: 3}
-  - {fileID: 1338712371177563645, guid: 127a121141f548d42a54f18e809414c8, type: 3}
+  - {fileID: 1364587841334750, guid: f8bd37a7d383940dbbc740c1a5e917b3, type: 2}
+  - {fileID: 1987821457856374, guid: fcf3445ef5a3748b4b2a5f2eeff8a7e1, type: 2}
+  - {fileID: 1954689237764068, guid: bc3c53142e6b44bab81c765f6ba5b2e8, type: 2}
+  - {fileID: 1223371761558328, guid: 6f67e2d9c76474888bca2643873cd298, type: 2}
+  - {fileID: 1370519727947204, guid: 3e5400e8fc24b4814b35c2404bea18b6, type: 2}
   scoreGoals: 64000000
   endGameRequirements:
     gameType: 0
-    counterValue: 30
+    counterValue: 10
   levelGoals:
   - numberNeeded: 7
     numberCollected: 0

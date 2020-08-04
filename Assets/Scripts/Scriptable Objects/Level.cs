@@ -4,9 +4,9 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "World", menuName = "Level")]
-
 public class Level : ScriptableObject
 {
+
     [Header("Board Dimensions")]
     public int width;
     public int height;
@@ -23,5 +23,4 @@ public class Level : ScriptableObject
     [Header("End Game Requirements")]
     public EndGameRequirements endGameRequirements;
     public BlankGoal[] levelGoals;
-
 }
