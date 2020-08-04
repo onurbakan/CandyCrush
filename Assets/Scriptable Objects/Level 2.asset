@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -146,15 +147,18 @@ MonoBehaviour:
   - x: 6
     y: 5
     tileKind: 4
+  - x: 7
+    y: 3
+    tileKind: 4
   dots:
-  - {fileID: 1364587841334750, guid: f8bd37a7d383940dbbc740c1a5e917b3, type: 2}
-  - {fileID: 1987821457856374, guid: fcf3445ef5a3748b4b2a5f2eeff8a7e1, type: 2}
-  - {fileID: 1223371761558328, guid: 6f67e2d9c76474888bca2643873cd298, type: 2}
-  - {fileID: 1954689237764068, guid: bc3c53142e6b44bab81c765f6ba5b2e8, type: 2}
-  - {fileID: 1370519727947204, guid: 3e5400e8fc24b4814b35c2404bea18b6, type: 2}
+  - {fileID: 1364587841334750, guid: f8bd37a7d383940dbbc740c1a5e917b3, type: 3}
+  - {fileID: 1987821457856374, guid: fcf3445ef5a3748b4b2a5f2eeff8a7e1, type: 3}
+  - {fileID: 1223371761558328, guid: 6f67e2d9c76474888bca2643873cd298, type: 3}
+  - {fileID: 1954689237764068, guid: bc3c53142e6b44bab81c765f6ba5b2e8, type: 3}
+  - {fileID: 1370519727947204, guid: 3e5400e8fc24b4814b35c2404bea18b6, type: 3}
   scoreGoals: e803000088130000581b0000
   endGameRequirements:
-    gameType: 0
+    gameType: 1
     counterValue: 1000
   levelGoals:
   - numberNeeded: 10
@@ -162,6 +166,6 @@ MonoBehaviour:
     goalSprite: {fileID: 21300008, guid: 988a3fce630a14b63a3e5e82e1f1226a, type: 3}
     matchValue: Indigo Dot
   - numberNeeded: 24
-    numberCollected: 2
+    numberCollected: 0
     goalSprite: {fileID: 21300000, guid: 482b725dc563148a9b62a91afcff4d01, type: 3}
     matchValue: Concrete
