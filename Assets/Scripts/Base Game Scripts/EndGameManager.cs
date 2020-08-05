@@ -98,7 +98,7 @@ public class EndGameManager : MonoBehaviour
     {
         tryAgainPanel.SetActive(true);
         board.currentState = GameState.lose;
-        Debug.Log("You Lose!");
+        //Debug.Log("You Lose!");
         currentCounterValue = 0;
         counter.text = "" + currentCounterValue;
         FadePanelController fade = FindObjectOfType<FadePanelController>();

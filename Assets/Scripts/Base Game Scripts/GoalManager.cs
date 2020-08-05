@@ -92,7 +92,7 @@ public class GoalManager : MonoBehaviour
             {
                 endGame.WinGame();
             }
-            Debug.Log("You win!");
+            //Debug.Log("You win!");
         }
     }
 

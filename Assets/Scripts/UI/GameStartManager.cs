@@ -22,14 +22,14 @@ public class GameStartManager : MonoBehaviour
         {
             startPanel.SetActive(false);
             levelPanel.SetActive(true);
-            Debug.Log("index : "+ index);
+            //Debug.Log("index : "+ index);
         }
         else
         {
             startPanel.SetActive(true);
             levelPanel.SetActive(false);
             index = 1;
-            Debug.Log("index : " + index);
+            //Debug.Log("index : " + index);
         }
     }
 

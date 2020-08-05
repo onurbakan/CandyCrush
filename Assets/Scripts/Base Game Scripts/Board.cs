@@ -729,7 +729,7 @@ public class Board : MonoBehaviour
             }
         }
         yield return new WaitForSeconds(refillDelay * 0.5f);
-        Debug.Log("Refilling the board");
+        //Debug.Log("Refilling the board");
         StartCoroutine(FillBoardCo());
     }
 
@@ -822,7 +822,7 @@ public class Board : MonoBehaviour
             StartCoroutine(ShuffleBoard());
         }
         yield return new WaitForSeconds(refillDelay);
-        Debug.Log("Done Refilling");
+        //Debug.Log("Done Refilling");
         System.GC.Collect();
         if (currentState != GameState.pause)
         {
@@ -882,20 +882,20 @@ public class Board : MonoBehaviour
             if (slimeTiles[newX, newY] != null)
             {
                 Vector2 adjacent = CheckForAdjacent(newX, newY);
-                Debug.Log(adjacent);
+                //Debug.Log(adjacent);
                 if (adjacent != Vector2.zero)
                 {
                     Destroy(allDots[newX + (int)adjacent.x, newY + (int)adjacent.y]);
                     Vector2 tempPosition = new Vector2(newX + (int)adjacent.x, newY + (int)adjacent.y);
                     GameObject tile = Instantiate(slimePiecePrefab, tempPosition, Quaternion.identity);
-                    Debug.Log(tempPosition);
+                    //Debug.Log(tempPosition);
                     slimeTiles[newX + (int)adjacent.x, newY + (int)adjacent.y] = tile.GetComponent<BackgroundTile>();
                     slime = true;
                 }
 
             }
             loops++;
-            Debug.Log(loops);
+            //Debug.Log(loops);
         }
     }
 

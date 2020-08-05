@@ -58,7 +58,7 @@ public class GameData : MonoBehaviour
         //Close the data stream
         file.Close();
 
-        Debug.Log("Saved");
+        //Debug.Log("Saved");
 
     }
 
@@ -72,7 +72,7 @@ public class GameData : MonoBehaviour
             FileStream file = File.Open(Application.persistentDataPath + "/player.dat", FileMode.Open);
             saveData = formatter.Deserialize(file) as SaveData;
             file.Close();
-            Debug.Log("Loaded");
+            //Debug.Log("Loaded");
         }
         else
         {
