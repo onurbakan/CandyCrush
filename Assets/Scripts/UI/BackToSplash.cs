@@ -10,6 +10,8 @@ public class BackToSplash : MonoBehaviour
     private GameData gameData;
     private Board board;
 
+
+
     public void WinOK()
     {
         if (gameData != null)
@@ -18,6 +20,7 @@ public class BackToSplash : MonoBehaviour
             gameData.Save();
         }
         SceneManager.LoadScene(sceneToLoad);
+
     }
 
     public void LoseOK()
